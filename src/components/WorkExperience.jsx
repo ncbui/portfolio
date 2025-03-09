@@ -89,9 +89,9 @@ export default function WorkExperience () {
     
     const expTable = () => {
         return (
-            <TableContainer sx={{ p:0}}>
-            <Table aria-label="experience table" style={{maxWidth: '786px'}} sx={{m:0, p:0}}> 
-              <TableBody sx={{m:0, p:0}}>
+            <TableContainer >
+            <Table aria-label="experience table" style={{maxWidth: '786px'}}> 
+              <TableBody>
                 {makeWorkRow(experience.work)}
                 {makeEduRow(experience.education)}
               </TableBody>

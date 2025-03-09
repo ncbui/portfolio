@@ -24,13 +24,7 @@ export const shades = {
 }
 
 export const style = { 
-  typography: {
-    "fontFamily": `"Alegreya", "Niramit", "Roboto", sans-serif`,
-    "fontSize": 16,
-    "fontWeightLight": 300,
-    "fontWeightRegular": 400,
-    "fontWeightMedium": 500
-   },
+  
   palette: {
     primary: {
       light: shades.primary[100],
@@ -38,8 +32,7 @@ export const style = {
       main: shades.primary[300],
       dark1: shades.primary[500],
       text1: shades.primary[600],
-    }
-  },
+    }},
   }
 
 export const theme = createTheme(style)
