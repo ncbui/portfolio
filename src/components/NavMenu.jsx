@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { GitHub, LinkedIn } from '@mui/icons-material';

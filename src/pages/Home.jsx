@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { Typography } from '@mui/joy';
 import { BodySheets } from '../template/theme';
 
@@ -18,8 +16,8 @@ export default function Home() {
         &nbsp;
       </Typography>
       <Typography>In the past, I have had opportunity to work as peer health educator in volunteer and internship roles, 
-        as IT support in primary schools and for startups, as a research assistant in psychology lab, 
-        and with processing EHR data for a biotech company.</Typography>
+        as IT support in primary schools and startups, as a research assistant in psychology lab, 
+        and with processing patient data for a biotech company.</Typography>
       <Typography variant="title" color="inherit" noWrap>
         &nbsp;
       </Typography>

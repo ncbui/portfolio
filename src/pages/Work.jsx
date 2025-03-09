@@ -1,5 +1,3 @@
-
-import React from 'react';
 import { BodySheets } from '../template/theme';
 import WorkExperience from '../components/WorkExperience';
 

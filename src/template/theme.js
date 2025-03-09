@@ -25,9 +25,12 @@ export const shades = {
 
 export const style = { 
   typography: {
-    fontFamily: "Alegreya, sans-serif",
-    color: shades.primary[600],
-  },
+    "fontFamily": `"Alegreya", "Niramit", "Roboto", sans-serif`,
+    "fontSize": 16,
+    "fontWeightLight": 300,
+    "fontWeightRegular": 400,
+    "fontWeightMedium": 500
+   },
   palette: {
     primary: {
       light: shades.primary[100],
@@ -77,8 +80,8 @@ export const BootstrapButton = styled(Button)({
   border: '2px dotted',
   borderRadius: '1rem',
   marginRight: '.5rem',
-  borderColor: theme.palette.primary.medium,
-  color: theme.palette.primary.medium,
+  borderColor: theme.palette.primary.main,
+  color: theme.palette.primary.main,
   lineHeight: 1.5,
   backgroundColor: 'inherit',
   '&:hover': {

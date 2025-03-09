@@ -1,5 +1,3 @@
-
-import * as React from "react";
 import { Routes, Route } from 'react-router-dom';
 import { Container } from '@mui/joy';
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -20,7 +18,7 @@ export default function App() {
         overflow: 'hidden',
         m: 0,
         p: 0,
-        border:'4px dotted',
+        border:'5px dotted',
         borderColor: theme.palette.primary.bright,
         '@media (max-width: 780px)' : {
           flexDirection:'column',
