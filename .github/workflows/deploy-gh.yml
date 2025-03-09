@@ -17,5 +17,7 @@ jobs:
       with:
         node-version: 18
         cache: 'npm'
-    - run: npm ci
+    - run: |
+        rm -rf node_modules/
+        npm i
     - run: npm run deploy
