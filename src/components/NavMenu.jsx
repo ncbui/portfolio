@@ -12,7 +12,7 @@ export default function NavMenu() {
       <List sx={{width:'20vw', '@media (max-width: 780px)' : {width:'90%'}}}>
         <List sx={{display:'flex', flexDirection:'col', width:'20rem', '@media (max-width: 780px)' : {flexDirection:'row', justifyContent:'space-between'}}}>
         <ListSubheader sx={{width:'20rem', '@media (max-width: 780px)' : {width:'100vw'}}}>
-          <Typography level="h1" sx={{color: theme.palette.primary.medium, fontSize: '3rem', '@media (max-width: 780px)' : {fontSize: '1.6rem', width:'20vw'}}}>
+          <Typography level="h1" sx={{color: theme.palette.primary.main, fontSize: '3rem', '@media (max-width: 780px)' : {fontSize: '1.6rem', width:'20vw'}}}>
             Cam Bui   
           </Typography>
         </ListSubheader>
