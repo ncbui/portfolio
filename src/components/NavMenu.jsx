@@ -32,16 +32,23 @@ export default function NavMenu() {
         <List sx={{'@media (max-width: 780px)' : {flexDirection: 'row', justifyContent:'start', m:0, p:0}}}>
           <List sx={{'@media (max-width: 780px)' : {flexDirection: 'row',}}}>
           <ListItem >
-              <Typography level='body-lg'>
+              <Typography level='body-md'>
                 <Link to="/" >
                 home
                 </Link>
               </Typography>
           </ListItem >
           <ListItem>
-            <Typography level='body-lg'>
-              <Link to="/work" level='body-lg'>
+            <Typography level='body-md'>
+              <Link to="/work" level='body-md'>
                 work
+              </Link>
+            </Typography>
+          </ListItem>
+          <ListItem>
+            <Typography level='body-md'>
+              <Link to="/play" level='body-md'>
+                play
               </Link>
             </Typography>
           </ListItem>

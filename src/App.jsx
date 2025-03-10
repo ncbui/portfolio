@@ -4,6 +4,7 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import NavMenu from './components/NavMenu';
 import Home from './pages/Home';
 import Work from './pages/Work';
+import Play from './pages/Play';
 import { theme } from "./template/theme";
 import ErrorPage from './pages/ErrorPage';
 
@@ -40,6 +41,7 @@ export default function App() {
         <Routes>
             <Route exact path="/" element={<Home />} />
             <Route path="/work" element={<Work />} />
+            <Route path="/play" element={<Play />} />
             <Route element={<ErrorPage />} />
         </Routes>
         </ErrorBoundary>
