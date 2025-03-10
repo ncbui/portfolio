@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { theme } from "../../template/theme";
+import { useCanvas } from "./CanvasHook";
 
 
 
@@ -18,25 +19,7 @@ const defaultCanvas = () =>{
 export const Canvas = (props) => { 
 
     const { draw, ...rest } = props
-    const canvasRef = useRef(defaultCanvas);
-
-    useEffect(() => {
-        const canvas = canvasRef.current
-        const context = canvas.getContext('2d')
-        let frameCount = 0;
-        let frameId;    
-
-        const render = () => {
-            frameCount++
-            draw(context, frameCount)
-            frameId = window.requestAnimationFrame(render)
-        }
-        render()
-        
-        return () => {
-            window.cancelAnimationFrame(frameId)
-        }
-      }, [draw])
+    const canvasRef = useCanvas(draw)
 
     return <canvas ref={canvasRef} {...props}/>
 }
