@@ -23,13 +23,6 @@ export default function Play() {
         <Typography level="h5">
             Eat well. and outlive the other snake.
         </Typography>
-        <Typography variant="title" color="inherit" noWrap>
-            &nbsp;
-          </Typography>
-          <BootstrapButton>Start</BootstrapButton>
-          <Typography variant="title" color="inherit" noWrap>
-            &nbsp;
-          </Typography>
         <SnakeGame />
         </Container>
     </BodySheets>

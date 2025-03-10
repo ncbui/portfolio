@@ -1,9 +1,10 @@
 import { useRef, useEffect } from 'react'
 import { theme } from '../../../template/theme';
+import {drawSnake, drawCanvas} from './draw.jsx'
 
 const defaultCanvas = () =>{
-    const WIDTH = 50;
-    const HEIGHT = 60;
+    const WIDTH = 20;
+    const HEIGHT = 30;
     const { devicePixelRatio:ratio=1 } = window
     const default_canvas = document.getElementById("board");
     default_canvas.setAttribute("height", `${HEIGHT * ratio}px`);
@@ -13,20 +14,22 @@ const defaultCanvas = () =>{
     default_canvas.style.backgroundColor = theme.palette.primary.dark;
 }
 
-export const useCanvas = (draw, options={}) => {
-    // const {predraw, postdraw} = options
+export function useCanvas(options, snake) {
+    // const {drawCanvas, postdraw} = options
+    const {drawsnake, drawcanvas, postdraw} = options;
+
     const canvasRef = useRef(defaultCanvas);
 
     useEffect(() => {
         const canvas = canvasRef.current;
-        const context = canvas.getContext(options.context || '2d');
-        console.log(canvas.getContext('2d'))
+        const context = canvas.getContext('2d');
+
         let frameCount = 0;
         let frameId;    
         const render = () => {
             frameCount++
-            // predraw (context, canvas)
-            draw(context, frameCount)
+            drawCanvas (context, canvas)
+            drawSnake(context, frameCount, snake)
             // postdraw()
             frameId = window.requestAnimationFrame(render)
         }
@@ -34,6 +37,6 @@ export const useCanvas = (draw, options={}) => {
         return () => {
             window.cancelAnimationFrame(frameId)
         }
-      }, [draw])
+      }, [drawsnake])
       return canvasRef
 }

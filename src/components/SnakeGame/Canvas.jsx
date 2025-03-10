@@ -1,7 +1,6 @@
 import { useCanvas } from "./hooks/useCanvas";
 
-export const Canvas = (props) => { 
-    const { draw, predraw, postdraw } = props
-    const canvasRef = useCanvas(draw, {predraw, postdraw})
-    return <canvas ref={canvasRef} {...props}/>
+export const Canvas = (options, snake) => { 
+    const canvasRef = useCanvas(options, snake)
+    return <canvas id="snakeBoard" ref={canvasRef} {...options}/>
 }

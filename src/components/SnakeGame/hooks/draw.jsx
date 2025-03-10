@@ -1,32 +1,39 @@
 import { theme } from "../../../template/theme"
 
-export const predraw = (context, canvas) => {
-    context.save()
-    resizeCanvasToDisplaySize(context, canvas)
-    const { width, height } = context.canvas
-    context.clearRect(0, 0, width, height)
-  }
-export const draw = (ctx, frameCount) => {
+export const drawCanvas = (ctx, canvas) => {
+    ctx.save()
+    resizeCanvasToDisplaySize(ctx, canvas)
     ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
-    ctx.fillStyle = theme.palette.primary.bright
-    ctx.beginPath()
-    ctx.arc(50, 100, 5*Math.sin(frameCount*0.05)**2, 0, 2*Math.PI)
-    ctx.fill()
-    }
+  }
+
 export const postdraw = () => {
     index++
     ctx.restore()
 }
 
-function resizeCanvasToDisplaySize(canvas) {
+export function drawSnake(ctx, frameCount, snake) {
+    snake.forEach((snakePart) =>{
+        ctx.fillStyle = theme.palette.primary.bright;
+        // Set the border colour of the snake part
+        ctx.strokestyle = theme.palette.primary.main;
+        // Draw a "filled" rectangle to represent the snake part at the coordinates
+        // the part is located
+        ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
+        // Draw a border around the snake part
+        ctx.strokeRect(snakePart.x, snakePart.y, 10, 10);
+    })
+
+    }
+    
+function resizeCanvasToDisplaySize(ctx, canvas) {
     const { width, height } = canvas.getBoundingClientRect()
 
     if (canvas.width !== width || canvas.height !== height) {
         const { devicePixelRatio:ratio=1 } = window
-        const context = canvas.getContext('2d')
+        const ctx = canvas.getctx('2d')
         canvas.width = width*ratio
         canvas.height = height*ratio
-        context.scale(ratio, ratio)
+        ctx.scale(ratio, ratio)
         return true
         }
 
