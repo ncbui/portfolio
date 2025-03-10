@@ -2,37 +2,42 @@ name: Deploy to GH Pages
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ['feb2025']
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: 'pages'
+  cancel-in-progress: true
+
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    env:
-      user_name: github-actions@github.com
-      user_email: github-actions
-      github_token: ${{ secrets.DEPLOY_ACCESS_TOKEN }}
-      repository: ${{ github.repository }}
     steps:
-    - uses: actions/checkout@v4
-    - name: Use Node.js 18
-      uses: actions/setup-node@v4
-      with:
-        node-version: 18
-        cache: 'npm'
-        key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-        restore-keys: |
-          ${{ runner.os }}-node-
-    - name: Install dependencies
-      run: |
-        rm -rf node_modules/
-        npm install
-    - name: Build
-      run: npm run build
-    - name: Deploy
-      run: |
-        git config --global user.name $user_name
-        git config --global user.email $user_email
-        git remote set-url origin https://${github_token}@github.com/${repository}
-        npm run deploy
-    
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build
+        run: npm run build
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './dist'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
