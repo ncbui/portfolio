@@ -5,6 +5,7 @@ import NavMenu from './components/NavMenu';
 import Home from './pages/Home';
 import Work from './pages/Work';
 import { theme } from "./template/theme";
+import ErrorPage from './pages/ErrorPage';
 
 export default function App() {
   return (
@@ -33,8 +34,9 @@ export default function App() {
       <ErrorBoundary>
         <NavMenu/>  
         <Routes>
-            <Route path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="/work" element={<Work />} />
+            <Route element={<ErrorPage />} />
         </Routes>
         </ErrorBoundary>
     </Container>
