@@ -1,4 +1,4 @@
-import { Typography, Container, Sheet } from "@mui/joy";
+import { Sheet } from "@mui/joy";
 import { theme } from "../../template/theme";
 import {Canvas} from "./canvas";
 import { predraw, draw, postdraw } from "./hooks/draw";

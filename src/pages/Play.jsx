@@ -1,7 +1,7 @@
 import { BodySheets, BootstrapButton } from '../template/theme';
 import { theme } from '../template/theme';
 import SnakeGame from '../components/SnakeGame/SnakeGame';
-import { Typography , Container, Button} from '@mui/material';
+import { Typography , Container} from '@mui/material';
 
 export default function Play() {
   return (

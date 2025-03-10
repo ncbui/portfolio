@@ -1,7 +1,6 @@
 import { useRef, useEffect } from 'react'
 import { theme } from '../../../template/theme';
 
-
 const defaultCanvas = () =>{
     const WIDTH = 50;
     const HEIGHT = 60;
