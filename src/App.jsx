@@ -28,7 +28,11 @@ export default function App() {
           overflowY: 'auto',
           m: 0,
           p: 0,
-        }
+        },
+        '@media (min-height: 900px)' : {
+            marginY: '10vh',
+            height:'60vh',
+          }
       }}
       >
       <ErrorBoundary>
