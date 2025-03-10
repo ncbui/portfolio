@@ -14,10 +14,8 @@ const defaultCanvas = () =>{
     default_canvas.style.backgroundColor = theme.palette.primary.dark;
 }
 
-export function useCanvas(options, snake) {
-    // const {drawCanvas, postdraw} = options
-    const {drawsnake, drawcanvas, postdraw} = options;
-
+export function useCanvas(props) {
+    const {drawsnake, drawcanvas, postdraw, snake} = props;
     const canvasRef = useRef(defaultCanvas);
 
     useEffect(() => {
@@ -37,6 +35,6 @@ export function useCanvas(options, snake) {
         return () => {
             window.cancelAnimationFrame(frameId)
         }
-      }, [drawsnake])
+      }, [snake])
       return canvasRef
 }
