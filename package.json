@@ -2,7 +2,7 @@
   "name": "bui.portfolio",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://ncbui.github.io/portfolio",
+  "homepage": "https://ncbui.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite",
