@@ -2,13 +2,13 @@
   "name": "bui.portfolio",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://ncbui.github.io/portfolio",
+  "homepage": "https://ncbui.github.io/",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
+    "preview": "vite preview --port 8080",
     "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
