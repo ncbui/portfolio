@@ -19,7 +19,7 @@ export default function SnakeGame () {
                 Use the arrow keys to guide your snake to food.
                 Eat well. and outlive the other snake.
           </Typography>
-        <Canvas />
+            <Canvas />
         </Container>
     )
 }
