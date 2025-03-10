@@ -39,7 +39,7 @@ export const theme = createTheme(style)
 
 export const global = {
             html: {
-              fontSize: "100%",
+              fontSize: "90%",
               color: shades.primary[600],
               '@media (max-width: 780px)' : {
                 fontSize: '90%',
@@ -68,7 +68,7 @@ export const global = {
 
 export const BootstrapButton = styled(Button)({
   textTransform: 'none',
-  fontSize: '75%',
+  fontSize: '85%',
   padding: '6px 12px',
   border: '2px dotted',
   borderRadius: '1rem',
