@@ -2,9 +2,7 @@ name: Deploy to GH Pages
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches: [ "feb2025" ]
   workflow_dispatch:
 
 jobs:
@@ -18,6 +16,8 @@ jobs:
         node-version: 18
         cache: 'npm'
     - run: |
+        git config --global user.email github-actions@github.com
+        git config --global user.name github-actions
         rm -rf node_modules/
         npm i
-    - run: npm run deploy
+        npm run deploy
