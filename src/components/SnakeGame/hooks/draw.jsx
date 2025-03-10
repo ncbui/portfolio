@@ -12,7 +12,7 @@ export const postdraw = () => {
 }
 
 export function drawSnake(ctx, frameCount, snake) {
-    snake.forEach((snakePart) =>{
+    snake.parts.forEach((snakePart) =>{
         ctx.fillStyle = theme.palette.primary.bright;
         // Set the border colour of the snake part
         ctx.strokestyle = theme.palette.primary.main;

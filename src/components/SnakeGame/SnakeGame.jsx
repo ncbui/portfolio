@@ -2,21 +2,18 @@ import { Sheet, Typography } from "@mui/joy";
 import { theme, BootstrapButton } from "../../template/theme";
 import {Canvas} from "./canvas";
 import { drawSnake, drawCanvas, postdraw } from "./hooks/draw";
+import Snake from "./Snake";
 
 export default function SnakeGame (props) { 
-    let snake = [
-        { x: 20, y: 100,},
-        { x: 30, y: 100,},
-        { x: 40, y: 100,},
-        { x: 50, y: 100,},
-        { x: 60, y: 100,},
-    ]; 
+    let snake = new Snake([
+      { x: 20, y: 100,},
+      { x: 30, y: 100,},
+      { x: 40, y: 100,},
+      { x: 50, y: 100,},
+      { x: 60, y: 100,},
+    ])
+    console.log("snake", snake)
 
-    let options = {
-      drawsnake: drawSnake,
-      drawcanvas: drawCanvas,
-      postdraw: postdraw,
-    }
 
     return (
       <>
