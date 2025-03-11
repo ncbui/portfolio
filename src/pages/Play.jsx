@@ -10,8 +10,8 @@ export default function Play() {
         display:'flex', 
         flexDirection:'column', 
         alignItems: 'center',
-        border: '5px dashed',
-        borderColor: 'pink',
+        // border: '5px dashed',
+        // borderColor: 'pink',
         height: '90%',
         }}>
         <Typography level="h4" variant="h4" sx={{color: theme.palette.primary.main, alignSelf:'center', '@media (max-width: 780px)' : {width:'20vw'}}}>

@@ -69,14 +69,15 @@ export const global = {
 export const BootstrapButton = styled(Button)({
   textTransform: 'none',
   fontSize: '85%',
+  fontWeight: '900',
   padding: '6px 12px',
-  border: '2px dotted',
-  borderRadius: '1rem',
+  border: '1px solid',
+  borderRadius: '.5rem',
   marginRight: '.5rem',
-  borderColor: theme.palette.primary.main,
-  color: theme.palette.primary.main,
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.primary.light,
   lineHeight: 1.5,
-  backgroundColor: 'inherit',
+  // backgroundColor: 'inherit',
   '&:hover': {
     // backgroundColor: theme.palette.primary.bright,
     backgroundColor: 'goldenrod',
@@ -84,9 +85,10 @@ export const BootstrapButton = styled(Button)({
   },
   '&:active': {
     boxShadow: 'none',
+    borderColor:'goldenrod',
   },
   '&:focus': {
-    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+    boxShadow: `0rem 0rem 0.5rem 0.2rem ${shades.primary[200] }`,
   },
 });
 
