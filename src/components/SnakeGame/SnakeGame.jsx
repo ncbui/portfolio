@@ -36,7 +36,7 @@ export default function SnakeGame () {
           Use the arrow keys to guide your snake to food. 
         </Typography>
         <Typography level="h5">
-          Eat well. Outlive the other snake.
+          Eat well. Live long and prosper.
         </Typography>
         <Typography variant="title" color="inherit" noWrap>
         &nbsp;
