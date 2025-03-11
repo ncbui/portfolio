@@ -1,7 +1,7 @@
 import { Sheet, Typography } from "@mui/joy";
 import { theme, BootstrapButton } from "../../template/theme";
 import {Canvas} from "./canvas";
-import { drawSnake, drawCanvas, postdraw } from "./hooks/draw";
+import { drawCanvas, postdraw } from "./hooks/draw";
 import Snake from "./Snake";
 
 export default function SnakeGame (props) { 
@@ -12,8 +12,6 @@ export default function SnakeGame (props) {
       { x: 50, y: 100,},
       { x: 60, y: 100,},
     ])
-    console.log("snake", snake)
-
 
     return (
       <>
@@ -25,7 +23,7 @@ export default function SnakeGame (props) {
       &nbsp;
       </Typography>
       <Sheet sx={{backgroundColor:theme.palette.primary.dark, width:'50%', height: '60%'}}>
-        <Canvas drawsnake={ drawSnake} drawcanvas={ drawCanvas} postdraw={ postdraw} snake={snake}/>
+        <Canvas drawcanvas={drawCanvas} postdraw={postdraw} snake={snake}/>
       </Sheet>
       </>
     )

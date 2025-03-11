@@ -1,6 +1,5 @@
 import { useRef, useEffect } from 'react'
 import { theme } from '../../../template/theme';
-import {drawSnake, drawCanvas} from './draw.jsx'
 
 const defaultCanvas = () =>{
     const WIDTH = 20;
@@ -15,8 +14,9 @@ const defaultCanvas = () =>{
 }
 
 export function useCanvas(props) {
-    const {drawsnake, drawcanvas, postdraw, snake} = props;
+    const { drawcanvas, postdraw, snake} = props;
     const canvasRef = useRef(defaultCanvas);
+    
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -26,15 +26,17 @@ export function useCanvas(props) {
         let frameId;    
         const render = () => {
             frameCount++
-            drawCanvas (context, canvas)
-            drawSnake(context, frameCount, snake)
+            drawcanvas (context, canvas)
+            snake.draw(context)
             // postdraw()
             frameId = window.requestAnimationFrame(render)
         }
         render()
+        
         return () => {
             window.cancelAnimationFrame(frameId)
         }
-      }, [snake])
+      }, [])
+
       return canvasRef
 }
