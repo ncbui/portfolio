@@ -78,15 +78,16 @@ export const BootstrapButton = styled(Button)({
   lineHeight: 1.5,
   backgroundColor: 'inherit',
   '&:hover': {
-    // backgroundColor: theme.palette.primary.bright,
+    color: theme.palette.primary.main,
     backgroundColor: 'goldenrod',
     borderColor:'goldenrod',
   },
   '&:active': {
     boxShadow: 'none',
   },
-  '&:focus': {
-    boxShadow: '0 0 0 0.2rem rgba(0,123,255,.5)',
+  '&:disabled': {
+    borderColor: theme.palette.secondary.main,
+    color: theme.palette.secondary.main,
   },
 });
 
@@ -117,7 +118,7 @@ export const BodySheets = styled(Sheet)({
   justifyContent: 'space-between',
   // boxShadow: '-.1rem 0 .4rem .4rem rgba(92, 100, 108, 0.1)',
   '@media (max-width: 780px)' : {
-    padding: '1rem',
+    padding: '2rem',
     width:'100vw',
     m:0,
   }

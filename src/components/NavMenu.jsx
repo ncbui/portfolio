@@ -8,8 +8,8 @@ import { Sheets } from '../template/theme';
 export default function NavMenu() {
   const theme = useTheme()
   return (
-    <Sheets>
-      <List sx={{width:'20vw', '@media (max-width: 780px)' : {width:'90%'}}}>
+    <Sheets sx={{'@media (max-width: 780px)' : {width:'100vw', m:0, borderBottom:'4px dotted', borderColor: theme.palette.primary.bright, boxShadow: '-.1rem 0 .4rem .4rem rgba(92, 100, 108, 0.1)',}}}>
+      <List sx={{width:'20vw', }}>
         <List sx={{display:'flex', flexDirection:'col', width:'20rem', '@media (max-width: 780px)' : {flexDirection:'row', justifyContent:'space-between'}}}>
         <ListSubheader sx={{width:'20rem', '@media (max-width: 780px)' : {width:'100vw'}}}>
           <Typography level="h1" sx={{color: theme.palette.primary.main, fontSize: '3rem', '@media (max-width: 780px)' : {fontSize: '1.6rem', width:'20vw'}}}>
