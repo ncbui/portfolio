@@ -23,7 +23,7 @@ export default function SnakeGame (props) {
       &nbsp;
       </Typography>
       <Sheet sx={{backgroundColor:theme.palette.primary.dark, width:'50%', height: '60%'}}>
-        <Canvas drawcanvas={drawCanvas} postdraw={postdraw} snake={snake}/>
+        <Canvas snake={snake}/>
       </Sheet>
       </>
     )
