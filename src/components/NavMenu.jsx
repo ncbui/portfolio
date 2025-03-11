@@ -34,7 +34,7 @@ export default function NavMenu() {
           <ListItem >
               <Typography level='body-md'>
                 <Link to="/" >
-                About
+                about
                 </Link>
               </Typography>
           </ListItem >
@@ -47,8 +47,8 @@ export default function NavMenu() {
           </ListItem>
           <ListItem>
             <Typography level='body-md'>
-              <Link to="/play" level='body-md'>
-                play
+              <Link to="/projects" level='body-md'>
+                projects
               </Link>
             </Typography>
           </ListItem>

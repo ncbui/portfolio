@@ -4,9 +4,10 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import NavMenu from './components/NavMenu';
 import About from './pages/About';
 import Work from './pages/Work';
-import Play from './pages/Play';
+import Projects from './pages/Projects';
 import { theme } from "./template/theme";
 import ErrorPage from './pages/ErrorPage';
+import SnakeGame from './components/SnakeGame/SnakeGame';
 
 export default function App() {
   return (
@@ -41,7 +42,7 @@ export default function App() {
         <Routes>
             <Route exact path="/" element={<About />} />
             <Route path="/work" element={<Work />} />
-            <Route path="/play" element={<Play />} />
+            <Route path="/projects" element={<Projects />} />
             <Route element={<ErrorPage />} />
         </Routes>
         </ErrorBoundary>
