@@ -9,14 +9,14 @@ export default function Projects(props) {
   console.log("project", projectView)
 
   let game=()=>{
-    if (projectView=="anaconda"){
+    if (projectView=='anaconda'){
       return <SnakeGame />
     }
   }
 
   return (
     <BodySheets sx={{m:0, padding:'2rem 2rem', }}>
-      {/* <ProjectsMenu project={projectView} setProjectView={setProjectView} /> */}
+      {/* <ProjectsMenu setProjectView={setProjectView} /> */}
       {game()}
     </BodySheets>
   );

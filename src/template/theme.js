@@ -4,23 +4,15 @@ import { Sheet } from '@mui/joy';
 
 export const shades = {
   primary: {
-    100: "#DCD6F7",
-    200: "#F76CC1",
-    300: "#451233",
-    400: "#3D2645",
-    500: "#51153C",
-    600: "#242124",
-    700: "#000000",
+    100:  " #DCD6F7",
+    200:  "rgb(197, 48, 140)",
+    300:  "#451233",
+    400:  " #3D2645",
+    500:  " #51153C",
+    600:  " #242124",
+    700:  " #000000",
+    800:  " #9198e5",
   },
-  body: {
-    100: "#451233",
-    200: "#3D2645",
-    300: "#51153C",
-  },
-  background: {
-    100: "#242124",
-    200: "#000000",
-  }
 }
 
 export const style = { 
@@ -55,7 +47,8 @@ export const global = {
               overflow: 'hidden',
               width: '100vw',
               height: '100vh',
-            },
+              background: 'radial-gradient(ellipse at 10% 10%,rgb(145, 152, 229, .6) 5% ,rgb(107, 10, 201, .3))',
+              },
             a: { 
               color: shades.primary[500], 
               textDecoration: 'none',
