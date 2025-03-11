@@ -7,7 +7,6 @@ import Work from './pages/Work';
 import Projects from './pages/Projects';
 import { theme } from "./template/theme";
 import ErrorPage from './pages/ErrorPage';
-import SnakeGame from './components/SnakeGame/SnakeGame';
 
 export default function App() {
   return (
@@ -20,7 +19,7 @@ export default function App() {
         height: '100vh',
         overflow: 'hidden',
         m: 0,
-        p: 0,
+        p: '1rem',
         border:'5px dotted',
         borderColor: theme.palette.primary.bright,
         '@media (max-width: 780px)' : {

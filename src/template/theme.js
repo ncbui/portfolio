@@ -38,7 +38,7 @@ export const global = {
               }
             },
             body: { 
-              backgroundColor: shades.primary[100],
+              backgroundColor: shades.primary[800],
               color: shades.primary[600],
               margin: 0,
               padding: 0,
@@ -47,7 +47,7 @@ export const global = {
               overflow: 'hidden',
               width: '100vw',
               height: '100vh',
-              background: 'radial-gradient(ellipse at 10% 10%,rgb(145, 152, 229, .6) 5% ,rgb(107, 10, 201, .3))',
+              background: 'radial-gradient(ellipse at 10% 10%,rgb(145, 152, 229, .6) 5% ,rgb(107, 10, 201, .2))',
               },
             a: { 
               color: shades.primary[500], 
@@ -64,7 +64,6 @@ export const BootstrapButton = styled(Button)({
   fontSize: '85%',
   fontWeight: '900',
   padding: '6px 12px',
-  border: '1px solid',
   borderRadius: '.5rem',
   marginRight: '.5rem',
   backgroundColor: theme.palette.primary.main,

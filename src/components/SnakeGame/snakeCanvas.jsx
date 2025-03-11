@@ -28,7 +28,7 @@ function resizeCanvasToDisplaySize(ctx, canvas) {
 }
 
 
-export const Canvas = (props) => { 
+export const SnakeCanvas = (props) => { 
     const { snake } = props
     const canvasRef = useCanvas({ drawCanvas, postdraw, snake})
     return <canvas id="snakeBoard" ref={canvasRef} {...props}/>

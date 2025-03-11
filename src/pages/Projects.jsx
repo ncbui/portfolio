@@ -1,5 +1,4 @@
 import { BodySheets } from '../template/theme';
-import { theme } from '../template/theme';
 import ProjectsMenu from '../components/ProjectsMenu';
 import SnakeGame from '../components/SnakeGame/SnakeGame';
 import { useState } from 'react';

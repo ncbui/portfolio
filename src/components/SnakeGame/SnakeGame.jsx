@@ -1,9 +1,9 @@
 import { Sheet, Typography, Container } from "@mui/joy";
 import { theme, BootstrapButton } from "../../template/theme";
-import {Canvas} from "./canvas";
+import {SnakeCanvas} from "./SnakeCanvas";
 import Snake from "./Snake";
 
-export default function SnakeGame (props) { 
+export default function SnakeGame () { 
     let snake = new Snake([
       { x: 20, y: 100,},
       { x: 30, y: 100,},
@@ -19,21 +19,24 @@ export default function SnakeGame (props) {
         flexDirection:'column', 
         alignItems: 'center',
         height: '90%',
+        '@media (max-width: 780px)' : {
+          m:'-.5rem', p:0
+        }
         }}>
         <Typography level="h4" variant="h4" sx={{color: theme.palette.primary.main, alignSelf:'center', '@media (max-width: 780px)' : {width:'20vw'}}}>
             Anaconda
         </Typography>
-        <Typography level="h5">
+        <Typography level="body-sm" textAlign={'center'}>
             Snake meets Blockade. 
-        </Typography>
-        <Typography level="h5">
+            </Typography>
+            <Typography level="body-sm" textAlign={'center'}>
             Built with React, Vite, HTML Canvas, and requestAnimationFrame.
         </Typography>
         <Typography level="h5">
-            Use the arrow keys to guide your snake to food.
+          Use the arrow keys to guide your snake to food. 
         </Typography>
         <Typography level="h5">
-            Eat well. and outlive the other snake.
+          Eat well. Outlive the other snake.
         </Typography>
         <Typography variant="title" color="inherit" noWrap>
         &nbsp;
@@ -43,7 +46,7 @@ export default function SnakeGame (props) {
         &nbsp;
         </Typography>
         <Sheet sx={{backgroundColor:theme.palette.primary.dark, width:'25rem', height: '20rem'}}>
-          <Canvas snake={snake}/>
+          <SnakeCanvas snake={snake}/>
         </Sheet>
         </Container>
       </>

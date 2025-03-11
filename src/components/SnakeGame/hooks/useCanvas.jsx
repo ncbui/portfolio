@@ -13,6 +13,7 @@ const defaultCanvas = () =>{
     default_canvas.style.backgroundColor = theme.palette.primary.dark;
 }
 
+// TODO: update to ref hook to update the canvas without re-rendering SnakeGame
 export function useCanvas(props) {
     const { drawCanvas, postdraw, snake} = props;
     const canvasRef = useRef(defaultCanvas);
