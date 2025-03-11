@@ -1,11 +1,12 @@
 import { theme } from "../../template/theme";
 
 export default class Snake {
-    constructor(snake, color = "orange") {
+    constructor(snake, color = "orange", setSnakeState) {
         this.parts = snake; // list of Points in snake body
         this.color = color;
         this.dx = 10; // Horizontal velocity
         this.dy = 0; // Vertical velocity
+        this.setState = setSnakeState ; // props
       }
       //   Find the head of the snake to move it
     head() {
@@ -29,6 +30,6 @@ export default class Snake {
         let newHead = {x: this.snake[0].x + this.dx, y: this.snake[0].y + this.dy};
         this.parts.unshift(newHead);
         this.parts.pop();
-        return Snake
+        this.setSnakeState(this.snake);
     }
 }
