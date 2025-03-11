@@ -2,7 +2,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Container } from '@mui/joy';
 import ErrorBoundary from "./components/ErrorBoundary";
 import NavMenu from './components/NavMenu';
-import Home from './pages/Home';
+import About from './pages/About';
 import Work from './pages/Work';
 import Play from './pages/Play';
 import { theme } from "./template/theme";
@@ -39,7 +39,7 @@ export default function App() {
       <ErrorBoundary>
         <NavMenu/>  
         <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/" element={<About />} />
             <Route path="/work" element={<Work />} />
             <Route path="/play" element={<Play />} />
             <Route element={<ErrorPage />} />

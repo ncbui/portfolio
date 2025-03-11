@@ -34,7 +34,7 @@ export default function NavMenu() {
           <ListItem >
               <Typography level='body-md'>
                 <Link to="/" >
-                home
+                About
                 </Link>
               </Typography>
           </ListItem >
