@@ -26,4 +26,9 @@ export default class Point {
         // Draw a border around the snake part
         ctx.strokeRect(this.x, this.y, 10, 10);
     }
+
+    /** Return t/f if this point is outside of the game board coords. */
+    isOutOfBound(width,height) {
+        return (this.x <= 0 || this.x >= width || this.y <= 0 || this.y >= height);
+    }
 }
