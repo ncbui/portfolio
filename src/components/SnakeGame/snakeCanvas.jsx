@@ -80,6 +80,7 @@ export const SnakeCanvas = (props) => {
                 timerId = requestAnimationFrame(animate)
             }
             timerId = requestAnimationFrame(animate)
+            setSnake(newSnake)
             return () => cancelAnimationFrame(timerId)
         }
     }, [shouldStart])
@@ -87,7 +88,7 @@ export const SnakeCanvas = (props) => {
     return (
         <Container sx={{marginTop: 0, p:0, display:'flex', flexDirection: 'column', justifyItems:'center', alignItems:'center', width:'25rem', height: '25rem'}}>
         <BootstrapButton id="startButton" onClick={() => setShouldStart(!shouldStart)} sx={{width:'fit-content', m:'1rem'}}> 
-            { shouldStart? 'Stop: ' : 'Start: '} {frameCounter}
+            { shouldStart? 'Stop' : 'Start'}
         </BootstrapButton>
         <Sheet sx={{backgroundColor:theme.palette.primary.dark, display:'flex', flexDirection: 'column', justifyItems:'center', alignItems:'center'}}>
         <canvas id="snakeboard" ref={canvasRef} width='350px' height='300px' style={{border: '5px solid pink'}}/>
