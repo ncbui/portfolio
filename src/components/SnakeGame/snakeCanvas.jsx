@@ -2,6 +2,7 @@ import {  theme, BootstrapButton } from "../../template/theme";
 import { Container, Sheet } from "@mui/joy";
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
 import Snake from "./Snake";
+import Point from "./Point";
 
 
 // const defaultCanvas = () =>{
@@ -44,20 +45,27 @@ const drawCanvas = (ctx, canvas) => {
     ctx.clearRect(0, 0, width, height)
 }
 
-export const SnakeCanvas = (props) => { 
-    let newSnake = new Snake([
-        { x: 60, y: 100,},
-        { x: 50, y: 100,},
-        { x: 40, y: 100,},
-        { x: 30, y: 100,},
-        { x: 20, y: 100,},
-      ])
+let longSnake = [
+    { x: 60, y: 100,},
+    { x: 50, y: 100,},
+    { x: 40, y: 100,},
+    { x: 30, y: 100,},
+    { x: 20, y: 100,},
+  ]
 
+let pointSnake = longSnake.map((p)=>new Point(p))
+
+let newSnake = new Snake(pointSnake)
+
+export const SnakeCanvas = (props) => { 
     // get canvas
     const canvasRef = useRef()
     const [shouldStart, setShouldStart] = useState(false)
     const [frameCounter, setFrameCounter] = useState(0)
     const [snake, setSnake] = useState(newSnake)
+    console.log("longSnake", longSnake)
+    console.log("pointSnake", pointSnake)
+    console.log("newSnake", newSnake)
     
     // output graphics, re-renders when update changes
     useEffect(() => {
