@@ -1,5 +1,13 @@
 import { theme } from "../../template/theme";
 
+
+/** Snake. Central actor in game: moves, eats pellets, and grows.
+ *
+ * @param snake - an array of points in the snake
+ * @param dx - direction snake moves horizontally
+ * @param dy - direction snake moves vertically
+ *
+ **/
 export default class Snake {
     constructor(snake) {
         this.snake = snake; // list of Points in snake body
