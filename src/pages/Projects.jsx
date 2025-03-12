@@ -5,14 +5,12 @@ import { useState } from 'react';
 
 export default function Projects(props) {
   const [projectView, setProjectView] = useState("anaconda")
-  console.log("project", projectView)
 
   let game=()=>{
     if (projectView=='anaconda'){
       return <SnakeGame />
     }
   }
-
   return (
     <BodySheets sx={{m:0, padding:'2rem 2rem', }}>
       {/* <ProjectsMenu setProjectView={setProjectView} /> */}

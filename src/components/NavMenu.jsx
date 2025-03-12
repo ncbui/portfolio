@@ -9,8 +9,8 @@ export default function NavMenu() {
   const theme = useTheme()
   return (
     <Sheets>
-      <List sx={{width:'20vw', '@media (max-width: 780px)' : {width:'90%'}}}>
-        <List sx={{display:'flex', flexDirection:'col', width:'20rem', '@media (max-width: 780px)' : {flexDirection:'row', justifyContent:'space-between'}}}>
+      <List sx={{width:'20vw', '@media (max-width: 786px)' : {width:'90%'}}}>
+        <List sx={{display:'flex', flexDirection:'col', width:'20rem', '@media (max-width: 786px)' : {flexDirection:'row', justifyContent:'space-between'}}}>
         <ListSubheader sx={{width:'20rem', '@media (max-width: 780px)' : {width:'100vw'}}}>
           <Typography level="h1" sx={{color: theme.palette.primary.main, fontSize: '3rem', '@media (max-width: 780px)' : {fontSize: '1.6rem', width:'20vw'}}}>
             <Link to="/" level='inherit'>
