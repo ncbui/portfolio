@@ -1,13 +1,11 @@
 import { theme } from "../../template/theme";
 
 export default class Snake {
-    constructor(snake, color = "orange") {
+    constructor(snake) {
         this.snake = snake; // list of Points in snake body
-        this.color = color;
         this.dx = 10; // Horizontal velocity
         this.dy = 0; // Vertical velocity
       }
-      //   Find the head of the snake to move it
     head() {
     return this.snake[0];
     }
@@ -26,11 +24,9 @@ export default class Snake {
     }
 
     move(setSnake){
-        console.log("before mpve", this.snake)
         let newHead = {x: this.snake[0].x + this.dx, y: this.snake[0].y + this.dy};
         this.snake.unshift(newHead);
         this.snake.pop();
-        console.log("after mpve", this.snake)
         setSnake(this);
     }
 }

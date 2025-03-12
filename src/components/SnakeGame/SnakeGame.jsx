@@ -1,13 +1,9 @@
 import { Typography, Container } from "@mui/joy";
-import { theme, BootstrapButton, Sheets } from "../../template/theme";
-import { useState } from "react";
-import {SnakeCanvas} from "./SnakeCanvas";
-import Snake from "./Snake";
+import { theme } from "../../template/theme";
+import { SnakeCanvas } from "./SnakeCanvas";
 
 export default function SnakeGame () { 
- 
     return (
-      <>
       <Container sx={{
         display:'flex', 
         flexDirection:'column', 
@@ -34,6 +30,5 @@ export default function SnakeGame () {
         </Typography>
         <SnakeCanvas/>
         </Container>
-      </>
     )
 }
