@@ -1,5 +1,6 @@
 import { Sheet, Typography, Container } from "@mui/joy";
 import { theme, BootstrapButton } from "../../template/theme";
+import { useState } from "react";
 import {SnakeCanvas} from "./SnakeCanvas";
 import Snake from "./Snake";
 
@@ -11,6 +12,8 @@ export default function SnakeGame () {
       { x: 50, y: 100,},
       { x: 60, y: 100,},
     ])
+
+    const [shouldStart, setShouldStart] = useState(false)
 
     return (
       <>
@@ -41,7 +44,9 @@ export default function SnakeGame () {
         <Typography variant="title" color="inherit" noWrap>
         &nbsp;
         </Typography>
-        <BootstrapButton id="startButton">Start</BootstrapButton>
+        <BootstrapButton id="startButton" onClick={() => { setShouldStart(!shouldStart)}}>
+          { shouldStart? 'Stop' : 'Start'} 
+        </BootstrapButton>
         <Typography variant="title" color="inherit" noWrap>
         &nbsp;
         </Typography>
