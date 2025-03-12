@@ -24,10 +24,9 @@ export default class Snake {
         this.snake.forEach((p) =>{p.draw(ctx)})
     }
 
-    move(setSnake){
+    move(){
         let newHead = new Point({x: this.snake[0].x + this.dx, y: this.snake[0].y + this.dy});
         this.snake.unshift(newHead);
         this.snake.pop();
-        setSnake(this);
     }
 }

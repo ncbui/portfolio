@@ -75,7 +75,7 @@ export const SnakeCanvas = (props) => {
         // move snake
         // check collision
         snake.draw(context)
-        snake.move(setSnake)
+        snake.move()
         postdraw(context)
     }, [frameCounter])
 
