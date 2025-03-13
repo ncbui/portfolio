@@ -1,7 +1,6 @@
 import {  theme, BootstrapButton } from "../../template/theme";
 import { Container, Sheet } from "@mui/joy";
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
-import Snake from "./Snake";
 import Point from "./Point";
 import {SnakeNPC} from "./SnakeNPC";
 
@@ -73,7 +72,7 @@ export const SnakeCanvas = () => {
         }
         return () => {
         }
-    }, [frameCounter, snake, shouldStart])
+    }, [frameCounter, snake, shouldStart, food])
 
     // update the counter
     useLayoutEffect(() => {

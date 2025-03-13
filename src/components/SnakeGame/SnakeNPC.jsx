@@ -10,11 +10,11 @@ export class SnakeNPC extends Snake {
 
     static defaultNPC() {
             let defaultPoints = [
-                { x: 60, y: 100,},
-                { x: 50, y: 100,},
-                { x: 40, y: 100,},
-                { x: 30, y: 100,},
-                { x: 20, y: 100,}
+                { x: 60, y: 200,},
+                { x: 50, y: 200,},
+                { x: 40, y: 200,},
+                { x: 30, y: 200,},
+                { x: 20, y: 200,}
             ].map((p)=>new Point(p))
             return defaultPoints
         }
