@@ -1,19 +1,14 @@
-import { extend } from "lodash";
 import Point from "./Point";
-
-
 /** Snake. Central actor in game: moves, eats pellets, and grows.
  *
  * @param snake - an array of Points in the snake
- * @param dx - direction snake moves horizontally
- * @param dy - direction snake moves vertically
+ * @param direction - direction snake is currently moving in: right, left, up, down
  *
  **/
 export default class Snake {
     constructor() {
         this.snake = Snake.defaultSnake(); // list of Points() in snake body
-        this.dx = 10; // Horizontal velocity, keep at least 10
-        this.dy = 0; // Vertical velocity
+        this.direction = "down"; // direction of travel
       }
 
       static defaultSnake() {
@@ -37,7 +32,17 @@ export default class Snake {
     }
 
     move(){
-        let newHead = new Point({x: this.snake[0].x + this.dx, y: this.snake[0].y + this.dy});
+        let newHead;
+        if (this.direction == "right") {
+            newHead = new Point({x: this.snake[0].x + 10, y: this.snake[0].y + 0})
+        } else if (this.direction == "left") {
+            newHead = new Point({x: this.snake[0].x - 10, y: this.snake[0].y +0})
+        } else if (this.direction == "down") {
+            newHead = new Point({x: this.snake[0].x + 0, y: this.snake[0].y +10})
+        } else if (this.direction == "up") {
+            newHead = new Point({x: this.snake[0].x + 0, y: this.snake[0].y -10})
+        } else { 
+            newHead = this.head()}
         this.snake.unshift(newHead);
         this.snake.pop();
     }

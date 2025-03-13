@@ -2,7 +2,7 @@ import {  theme, BootstrapButton } from "../../template/theme";
 import { Container, Sheet } from "@mui/joy";
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
 import Snake from "./Snake";
-import Point from "./Point";
+import {SnakeNPC} from "./SnakeNPC";
 
 // const defaultCanvas = () =>{
 //     const WIDTH = 20;
@@ -22,7 +22,6 @@ function resizeCanvasToDisplaySize(ctx, canvas) {
 
     if (canvas.width !== width || canvas.height !== height) {
         const { devicePixelRatio:ratio=1 } = window
-        const ctx = canvas.getctx('2d')
         canvas.width = width*ratio
         canvas.height = height*ratio
         ctx.scale(ratio, ratio)
@@ -32,43 +31,36 @@ function resizeCanvasToDisplaySize(ctx, canvas) {
     return false
 }
 
-const drawCanvas = (ctx, canvas) => {
-    const { width, height } = canvas
+const drawCanvas = ( canvas) => {
+    const { width, height } = canvas.getBoundingClientRect()
+    const ctx = canvas.getContext('2d')
     ctx.save()
-    // resizeCanvasToDisplaySize(ctx, canvas)
+    // if (canvas.width !== width || canvas.height !== height) {
+    //     const { devicePixelRatio:ratio=1 } = window
+    //     canvas.width = width*ratio
+    //     canvas.height = height*ratio
+    //     ctx.scale(ratio, ratio)
+    //     }
     ctx.clearRect(0, 0, width, height)
 }
 
-// let longSnake = [
-//     { x: 60, y: 100,},
-//     { x: 50, y: 100,},
-//     { x: 40, y: 100,},
-//     { x: 30, y: 100,},
-//     { x: 20, y: 100,},
-//   ]
-
-// let pointSnake = longSnake.map((p)=>new Point(p))
-
-// let newSnake = new Snake(pointSnake)
-let newSnake = new Snake()
-console.log("newSnake", newSnake)
 
 export const SnakeCanvas = () => { 
     const canvasRef = useRef()     // get canvas
     const [shouldStart, setShouldStart] = useState(false)
     const [frameCounter, setFrameCounter] = useState(0)
-    const [snake, setSnake] = useState(newSnake)
+    const [snake, setSnake] = useState(new SnakeNPC())
     // output graphics, re-renders when update changes
     useEffect(() => {
         if (shouldStart){
             const canvas = canvasRef.current
             const context = canvas.getContext('2d')
-            drawCanvas(context, canvas)
+            drawCanvas(canvas)
             snake.move()
             if (snake.outOfBounds(canvas.width, canvas.height)){
                 console.log("game over")
                 snake.draw(context)
-                setSnake(new Snake())
+                setSnake(new SnakeNPC())
                 setShouldStart(false)
                 return () => {}}
             snake.draw(context)
