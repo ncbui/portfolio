@@ -1,7 +1,6 @@
 import {  theme, BootstrapButton } from "../../template/theme";
 import { Container, Sheet } from "@mui/joy";
 import { useRef, useState, useLayoutEffect, useEffect } from "react";
-import Point from "./Point";
 import {SnakeNPC} from "./SnakeNPC";
 
 // const defaultCanvas = () =>{
@@ -50,7 +49,6 @@ export const SnakeCanvas = () => {
     const [shouldStart, setShouldStart] = useState(false)
     const [frameCounter, setFrameCounter] = useState(0)
     const [snake, setSnake] = useState(new SnakeNPC())
-    const food = [new Point(100,200)];
     // output graphics, re-renders when update changes
     useEffect(() => {
         const canvas = canvasRef.current
@@ -67,12 +65,11 @@ export const SnakeCanvas = () => {
                 setShouldStart(false)
                 return () => {}}
             snake.draw(context)
-            food[0].draw(context, 'green')
             context.restore()
         }
         return () => {
         }
-    }, [frameCounter, snake, shouldStart, food])
+    }, [frameCounter, snake, shouldStart])
 
     // update the counter
     useLayoutEffect(() => {

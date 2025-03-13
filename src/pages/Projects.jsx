@@ -3,7 +3,7 @@ import ProjectsMenu from '../components/ProjectsMenu';
 import SnakeGame from '../components/SnakeGame/SnakeGame';
 import { useState } from 'react';
 
-export default function Projects(props) {
+export default function Projects() {
   const [projectView, setProjectView] = useState("anaconda")
 
   let game=()=>{
