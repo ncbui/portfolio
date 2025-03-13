@@ -1,3 +1,4 @@
+import { extend } from "lodash";
 import Point from "./Point";
 
 
@@ -11,7 +12,7 @@ import Point from "./Point";
 export default class Snake {
     constructor() {
         this.snake = Snake.defaultSnake(); // list of Points() in snake body
-        this.dx = 1; // Horizontal velocity
+        this.dx = 10; // Horizontal velocity, keep at least 10
         this.dy = 0; // Vertical velocity
       }
 
@@ -31,14 +32,14 @@ export default class Snake {
     }
 
     draw(ctx){
-        this.snake.forEach((p) =>{p.draw(ctx)})
+        this.snake.forEach((p) =>{
+            p.draw(ctx)})
     }
 
-    move(setSnake){
+    move(){
         let newHead = new Point({x: this.snake[0].x + this.dx, y: this.snake[0].y + this.dy});
         this.snake.unshift(newHead);
         this.snake.pop();
-        setSnake(this)
     }
 
     outOfBounds(width, height){
