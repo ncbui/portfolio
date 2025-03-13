@@ -19,27 +19,18 @@ export class SnakeNPC extends Snake {
             return defaultPoints
         }
 
-    move(){
+    move(width, height){
         let newHead;
-        console.log("oldDirection", this.direction)
-        this.changeRandomDir(this.direction)
-        console.log("newDirection", this.direction)
-        if (this.direction == "right") {
-            newHead = new Point({x: this.snake[0].x + 10, y: this.snake[0].y + 0})
-        } else if (this.direction == "left") {
-            newHead = new Point({x: this.snake[0].x - 10, y: this.snake[0].y +0})
-        } else if (this.direction == "down") {
-            newHead = new Point({x: this.snake[0].x + 0, y: this.snake[0].y +10})
-        } else if (this.direction == "up") {
-            newHead = new Point({x: this.snake[0].x + 0, y: this.snake[0].y -10})
-        } else { 
-            newHead = this.head()}
-        // check if head will crash into wall before updating
+        newHead = this._calculateNewHead()
+        while (newHead.isOutOfBound(width, height)){ 
+            this.changeRandomDir()
+            newHead = this._calculateNewHead()
+        }
         this.snake.unshift(newHead);
         this.snake.pop();
     }
 
-  changeRandomDir(dir) {
+  changeRandomDir(dir = this.direction) {
     if (dir === "up" || dir === "down") Math.random() > .5 ? this.direction = "left" : this.direction = "right";
     if (dir === "left" || dir === "right") Math.random() > .5 ? this.direction = "down" : this.direction = "up";
   }

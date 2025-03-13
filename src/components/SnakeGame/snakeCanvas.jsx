@@ -54,10 +54,11 @@ export const SnakeCanvas = () => {
     useEffect(() => {
         if (shouldStart){
             const canvas = canvasRef.current
+            const {width,height} = canvas
             const context = canvas.getContext('2d')
             drawCanvas(canvas)
-            snake.move()
-            if (snake.outOfBounds(canvas.width, canvas.height)){
+            snake.move(width,height)
+            if (snake.outOfBounds(width,height)){
                 console.log("game over")
                 snake.draw(context)
                 setSnake(new SnakeNPC())
