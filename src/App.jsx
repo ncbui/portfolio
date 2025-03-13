@@ -19,8 +19,6 @@ export default function App() {
         overflow: 'hidden',
         m: 0,
         p: 0,
-        border:'5px dotted',
-        borderColor: theme.palette.primary.bright,
         '@media (max-width: 780px)' : {
           flexDirection:'column',
           maxWidth: '100vw',

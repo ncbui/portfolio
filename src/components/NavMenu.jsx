@@ -12,20 +12,20 @@ export default function NavMenu() {
       <List sx={{width:'20vw', }}>
         <List sx={{display:'flex', flexDirection:'col', width:'20rem', '@media (max-width: 780px)' : {flexDirection:'row', justifyContent:'space-between'}}}>
         <ListSubheader sx={{width:'20rem', '@media (max-width: 780px)' : {width:'100vw'}}}>
-          <Typography level="h1" sx={{color: theme.palette.primary.main, fontSize: '3rem', '@media (max-width: 780px)' : {fontSize: '1.6rem', width:'20vw'}}}>
+          <Typography level="h1" sx={{color: theme.palette.primary.text, fontSize: '3rem', '@media (max-width: 780px)' : {fontSize: '1.6rem', width:'20vw'}}}>
             <Link to="/" level='inherit'>
                 Cam Bui  
               </Link>
           </Typography>
         </ListSubheader>
         <ListItem>
-          <Typography level="h5" sx={{color: theme.palette.primary.bright,'@media (max-width: 780px)' : {fontSize: '1rem',}}}>
+          <Typography level="h5" sx={{color: theme.palette.primary.header,'@media (max-width: 780px)' : {fontSize: '1rem',}}}>
             Fullstack Devops Engineer
           </Typography>
         </ListItem>
         </List>
         <ListItem sx={{marginBottom: '1rem', maxWidth:'15vw', '@media (max-width: 780px)' : {marginBottom:'1rem', display:'none'}}}>
-          <Typography level='body-sm' sx={{color: theme.palette.primary.main,}}>
+          <Typography level='body-sm' sx={{color: theme.palette.primary.text,}}>
             I enable dev teams to customize GitOps best practices for their needs
           </Typography>
         </ListItem>
@@ -48,11 +48,12 @@ export default function NavMenu() {
           </List>
           <ListSubheader sx={{
             my: 3, 
-            '@media (max-width: 780px)' : {m:0}
+            display: 'flex',
+            '@media (max-width: 780px)' : {m:0, flexDirection: 'row'}
             }}>
-            <Typography>
-                <Link to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer"><GitHub sx={{fontSize:'2.5rem'}}/></Link>
-                <Link to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer"><LinkedIn sx={{fontSize:'2.5rem'}}/></Link>
+            <Typography sx={{ width:'10vw', '@media (max-width: 780px)' : {m:0, flexDirection: 'row'} }}>
+                <Link to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer"><GitHub sx={{fontSize:'2.5rem', '@media (max-width: 780px)' : {fontSize:'1.5rem'}}}/></Link>
+                <Link to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer"><LinkedIn sx={{fontSize:'2.5rem', '@media (max-width: 780px)' : {fontSize:'1.5rem'}}}/></Link>
             </Typography>
           </ListSubheader>
         </List>

@@ -31,7 +31,10 @@ export const style = {
       bright: shades.primary[200],
       main: shades.primary[300],
       dark1: shades.primary[500],
-      text1: shades.primary[600],
+      text: shades.primary[300],
+      headers: shades.primary[300],
+      background: shades.primary[300],
+      shadow: shades.primary[200],
     }},
   }
 
@@ -73,12 +76,12 @@ export const BootstrapButton = styled(Button)({
   border: '2px dotted',
   borderRadius: '1rem',
   marginRight: '.5rem',
-  borderColor: theme.palette.primary.main,
-  color: theme.palette.primary.main,
+  borderColor: theme.palette.primary.text,
+  color: theme.palette.primary.text,
   lineHeight: 1.5,
   backgroundColor: 'inherit',
   '&:hover': {
-    color: theme.palette.primary.main,
+    color: theme.palette.primary.text,
     backgroundColor: 'goldenrod',
     borderColor:'goldenrod',
   },
@@ -86,8 +89,8 @@ export const BootstrapButton = styled(Button)({
     boxShadow: 'none',
   },
   '&:disabled': {
-    borderColor: theme.palette.secondary.main,
-    color: theme.palette.secondary.main,
+    borderColor: theme.palette.secondary.text,
+    color: theme.palette.secondary.text,
   },
 });
 
@@ -108,7 +111,7 @@ export const Sheets = styled(Sheet)({
 
 export const BodySheets = styled(Sheet)({
   backgroundColor: 'inherit',
-  margin:0,
+  margin:'1rem 2rem',
   paddingTop: '3rem', 
   paddingLeft: '4rem',
   paddingRight: '2rem',
@@ -120,6 +123,6 @@ export const BodySheets = styled(Sheet)({
   '@media (max-width: 780px)' : {
     padding: '2rem',
     width:'100vw',
-    m:0,
+    m: 0,
   }
   });
