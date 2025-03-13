@@ -64,7 +64,7 @@ export const SnakeCanvas = () => {
             const canvas = canvasRef.current
             const context = canvas.getContext('2d')
             drawCanvas(context, canvas)
-            snake.move(setSnake)
+            snake.move()
             if (snake.outOfBounds(canvas.width, canvas.height)){
                 console.log("game over")
                 snake.draw(context)

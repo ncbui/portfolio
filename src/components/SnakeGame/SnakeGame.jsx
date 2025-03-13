@@ -1,6 +1,6 @@
 import { Typography, Container } from "@mui/joy";
 import { theme } from "../../template/theme";
-import { SnakeCanvas } from "./SnakeCanvas";
+import { SnakeCanvas } from "./snakeCanvas";
 
 export default function SnakeGame () { 
     return (
