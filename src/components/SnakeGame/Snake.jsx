@@ -33,21 +33,27 @@ export default class Snake {
 
     move(){
         let newHead;
-        if (this.direction == "right") {
-            newHead = new Point({x: this.snake[0].x + 10, y: this.snake[0].y + 0})
-        } else if (this.direction == "left") {
-            newHead = new Point({x: this.snake[0].x - 10, y: this.snake[0].y +0})
-        } else if (this.direction == "down") {
-            newHead = new Point({x: this.snake[0].x + 0, y: this.snake[0].y +10})
-        } else if (this.direction == "up") {
-            newHead = new Point({x: this.snake[0].x + 0, y: this.snake[0].y -10})
-        } else { 
-            newHead = this.head()}
+        newHead = this._calculateNewHead()
         this.snake.unshift(newHead);
         this.snake.pop();
     }
 
     outOfBounds(width, height){
         return this.head().isOutOfBound(width, height)
+    }
+
+    _calculateNewHead(currentHead = this.head()) {
+    let newHead;
+        if (this.direction == "right") {
+            newHead = new Point({x: currentHead.x + 10, y: currentHead.y + 0})
+        } else if (this.direction == "left") {
+            newHead = new Point({x: currentHead.x - 10, y: currentHead.y +0})
+        } else if (this.direction == "down") {
+            newHead = new Point({x: currentHead.x + 0, y: currentHead.y +10})
+        } else if (this.direction == "up") {
+            newHead = new Point({x: currentHead.x + 0, y: currentHead.y -10})
+        } else { 
+            newHead = this.head()}
+    return newHead;
     }
 }
