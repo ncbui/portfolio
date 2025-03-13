@@ -1,4 +1,3 @@
-import { theme } from "../../template/theme";
 import Point from "./Point";
 
 
@@ -10,11 +9,22 @@ import Point from "./Point";
  *
  **/
 export default class Snake {
-    constructor(snake) {
-        this.snake = snake; // list of Points() in snake body
-        this.dx = 10; // Horizontal velocity
+    constructor() {
+        this.snake = Snake.defaultSnake(); // list of Points() in snake body
+        this.dx = 1; // Horizontal velocity
         this.dy = 0; // Vertical velocity
       }
+
+      static defaultSnake() {
+        let defaultPoints = [
+            { x: 60, y: 100,},
+            { x: 50, y: 100,},
+            { x: 40, y: 100,},
+            { x: 30, y: 100,},
+            { x: 20, y: 100,}
+        ].map((p)=>new Point(p))
+        return defaultPoints
+    }
       
     head() {
     return this.snake[0];
@@ -24,9 +34,14 @@ export default class Snake {
         this.snake.forEach((p) =>{p.draw(ctx)})
     }
 
-    move(){
+    move(setSnake){
         let newHead = new Point({x: this.snake[0].x + this.dx, y: this.snake[0].y + this.dy});
         this.snake.unshift(newHead);
         this.snake.pop();
+        setSnake(this)
+    }
+
+    outOfBounds(width, height){
+        return this.head().isOutOfBound(width, height)
     }
 }

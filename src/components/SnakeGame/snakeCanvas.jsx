@@ -4,7 +4,6 @@ import { useRef, useState, useLayoutEffect, useEffect } from "react";
 import Snake from "./Snake";
 import Point from "./Point";
 
-
 // const defaultCanvas = () =>{
 //     const WIDTH = 20;
 //     const HEIGHT = 30;
@@ -17,11 +16,6 @@ import Point from "./Point";
 //     default_canvas.style.backgroundColor = theme.palette.primary.dark;
 // }
 
-
-export const postdraw = (ctx) => {
-    // index++
-    ctx.restore()
-}
     
 function resizeCanvasToDisplaySize(ctx, canvas) {
     const { width, height } = canvas.getBoundingClientRect()
@@ -45,39 +39,44 @@ const drawCanvas = (ctx, canvas) => {
     ctx.clearRect(0, 0, width, height)
 }
 
-let longSnake = [
-    { x: 60, y: 100,},
-    { x: 50, y: 100,},
-    { x: 40, y: 100,},
-    { x: 30, y: 100,},
-    { x: 20, y: 100,},
-  ]
+// let longSnake = [
+//     { x: 60, y: 100,},
+//     { x: 50, y: 100,},
+//     { x: 40, y: 100,},
+//     { x: 30, y: 100,},
+//     { x: 20, y: 100,},
+//   ]
 
-let pointSnake = longSnake.map((p)=>new Point(p))
+// let pointSnake = longSnake.map((p)=>new Point(p))
 
-let newSnake = new Snake(pointSnake)
+// let newSnake = new Snake(pointSnake)
+let newSnake = new Snake()
+console.log("newSnake", newSnake)
 
-export const SnakeCanvas = (props) => { 
-    // get canvas
-    const canvasRef = useRef()
+export const SnakeCanvas = () => { 
+    const canvasRef = useRef()     // get canvas
     const [shouldStart, setShouldStart] = useState(false)
     const [frameCounter, setFrameCounter] = useState(0)
     const [snake, setSnake] = useState(newSnake)
-    console.log("longSnake", longSnake)
-    console.log("pointSnake", pointSnake)
-    console.log("newSnake", newSnake)
-    
     // output graphics, re-renders when update changes
     useEffect(() => {
-        const canvas = canvasRef.current
-        const context = canvas.getContext('2d')
-        drawCanvas(context, canvas)
-        // move snake
-        // check collision
-        snake.draw(context)
-        snake.move()
-        postdraw(context)
-    }, [frameCounter])
+        if (shouldStart){
+            const canvas = canvasRef.current
+            const context = canvas.getContext('2d')
+            drawCanvas(context, canvas)
+            snake.move(setSnake)
+            if (snake.outOfBounds(canvas.width, canvas.height)){
+                console.log("game over")
+                snake.draw(context)
+                setSnake(new Snake())
+                setShouldStart(false)
+                return () => {}}
+            snake.draw(context)
+            context.restore()
+        }
+        return () => {
+        }
+    }, [frameCounter, snake, shouldStart])
 
     // update the counter
     useLayoutEffect(() => {
@@ -88,7 +87,6 @@ export const SnakeCanvas = (props) => {
                 timerId = requestAnimationFrame(animate)
             }
             timerId = requestAnimationFrame(animate)
-            setSnake(newSnake)
             return () => cancelAnimationFrame(timerId)
         }
     }, [shouldStart])
