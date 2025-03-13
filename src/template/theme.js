@@ -23,8 +23,19 @@ export const style = {
       bright: shades.primary[200],
       main: shades.primary[300],
       dark1: shades.primary[500],
+      text: shades.primary[600],
+      headers: shades.primary[300],
+      background: shades.primary[800],
+      shadow: shades.primary[200],
+    },
+    secondary: {
+      light: shades.primary[100],
+      bright: shades.primary[200],
+      main: shades.primary[300],
+      dark1: shades.primary[500],
       text1: shades.primary[600],
-    }},
+    }
+  },
   }
 
 export const theme = createTheme(style)
@@ -32,14 +43,14 @@ export const theme = createTheme(style)
 export const global = {
             html: {
               fontSize: "90%",
-              color: shades.primary[600],
+              color: theme.palette.primary.text,
               '@media (max-width: 780px)' : {
                 fontSize: '90%',
               }
             },
             body: { 
-              backgroundColor: shades.primary[800],
-              color: shades.primary[600],
+              backgroundColor: theme.palette.primary.background,
+              color: theme.palette.primary.text,
               margin: 0,
               padding: 0,
               display: 'flex', 
@@ -50,7 +61,7 @@ export const global = {
               background: 'radial-gradient(ellipse at 10% 10%,rgb(145, 152, 229, .6) 5% ,rgb(107, 10, 201, .2))',
               },
             a: { 
-              color: shades.primary[500], 
+              color: theme.palette.primary.main, 
               textDecoration: 'none',
               '&:active': {
                 color: 'goldenrod',
@@ -66,7 +77,7 @@ export const BootstrapButton = styled(Button)({
   padding: '6px 12px',
   borderRadius: '.5rem',
   marginRight: '.5rem',
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: theme.palette.primary.headers,
   color: theme.palette.primary.light,
   lineHeight: 1.5,
   // backgroundColor: 'inherit',
@@ -80,13 +91,13 @@ export const BootstrapButton = styled(Button)({
     borderColor:'goldenrod',
   },
   '&:focus': {
-    boxShadow: `0rem 0rem 0.5rem 0.2rem ${shades.primary[200] }`,
+    boxShadow: `0rem 0rem 0.5rem 0.2rem ${theme.palette.primary.shadow }`,
   },
 });
 
 export const Sheets = styled(Sheet)({
   backgroundColor: 'inherit',
-  color: shades.primary[600],
+  color: theme.palette.primary.text,
   m:0,
   paddingTop: '2rem', 
   paddingLeft: '1rem',

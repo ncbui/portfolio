@@ -12,7 +12,7 @@ export default function NavMenu() {
       <List sx={{width:'20vw', '@media (max-width: 786px)' : {width:'90%'}}}>
         <List sx={{display:'flex', flexDirection:'col', width:'20rem', '@media (max-width: 786px)' : {flexDirection:'row', justifyContent:'space-between'}}}>
         <ListSubheader sx={{width:'20rem', '@media (max-width: 780px)' : {width:'100vw'}}}>
-          <Typography level="h1" sx={{color: theme.palette.primary.main, fontSize: '3rem', '@media (max-width: 780px)' : {fontSize: '1.6rem', width:'20vw'}}}>
+          <Typography level="h1" sx={{color: theme.palette.primary.headers, fontSize: '3rem', '@media (max-width: 780px)' : {fontSize: '1.6rem', width:'20vw'}}}>
             <Link to="/" level='inherit'>
               Cam Bui  
             </Link>
@@ -25,7 +25,7 @@ export default function NavMenu() {
         </ListItem>
         </List>
         <ListItem sx={{marginBottom: '1rem', maxWidth:'15vw', '@media (max-width: 780px)' : {marginBottom:'1rem', display:'none'}}}>
-          <Typography level='body-sm' sx={{color: theme.palette.primary.main,}}>
+          <Typography level='body-sm' sx={{color: theme.palette.primary.headers,}}>
             I enable dev teams to customize GitOps best practices for their needs
           </Typography>
         </ListItem>

@@ -19,7 +19,7 @@ export default class Point {
     draw(ctx, color=theme.palette.primary.bright){
         ctx.fillStyle = color;
         // Set the border colour of the snake part
-        ctx.strokestyle = theme.palette.primary.main;
+        ctx.strokestyle = theme.palette.primary.headers;
         // Draw a "filled" rectangle to represent the point at the coordinates
         // the part is located
         ctx.fillRect(this.x, this.y, 10, 10);

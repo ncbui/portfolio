@@ -13,7 +13,7 @@ export default function SnakeGame () {
           m:'-.5rem', p:0
         }
         }}>
-        <Typography level="h4" variant="h4" sx={{color: theme.palette.primary.main, alignSelf:'center', '@media (max-width: 780px)' : {width:'50vw'}}}>
+        <Typography level="h4" variant="h4" sx={{color: theme.palette.primary.headers, alignSelf:'center', '@media (max-width: 780px)' : {width:'50vw'}}}>
             Anaconda          
             <Typography variant= "body-sm" level="body-sm">
             Snake meets Blockade. 
