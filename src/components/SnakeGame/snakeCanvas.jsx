@@ -52,10 +52,11 @@ export const SnakeCanvas = () => {
     const [snake, setSnake] = useState(new SnakeNPC())
     // output graphics, re-renders when update changes
     useEffect(() => {
+        const canvas = canvasRef.current
+        const {width,height} = canvas
+        const context = canvas.getContext('2d')
+        
         if (shouldStart){
-            const canvas = canvasRef.current
-            const {width,height} = canvas
-            const context = canvas.getContext('2d')
             drawCanvas(canvas)
             snake.move(width,height)
             if (snake.outOfBounds(width,height)){
