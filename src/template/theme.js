@@ -2,10 +2,11 @@ import { styled, createTheme } from '@mui/material/styles';
 import { Button } from '@mui/material/';
 import { Sheet } from '@mui/joy';
 
+
 export const shades = {
   primary: {
     100: "#DCD6F7",
-    200: "#F76CC1",
+    200: "rgb(234, 2, 145)",
     300: "#451233",
     400: "#3D2645",
     500: "#51153C",
@@ -36,6 +37,23 @@ export const style = {
       background: shades.primary[300],
       shadow: shades.primary[200],
     }},
+    typography: {
+      h1: {
+        fontSize: "3rem",
+        fontWeight: 500,
+        fontFamily: "serif",
+        fontStyle: "italic",
+      },
+    },
+    components: {
+      MuiTypography: {
+        styleOverrides: {
+          root: {
+            fontFamily: '',
+          },
+        },
+      },
+    },
   }
 
 export const theme = createTheme(style)
@@ -49,6 +67,7 @@ export const global = {
               }
             },
             body: { 
+              fontFamily: 'Hind, sans-serif',
               backgroundColor: shades.primary[100],
               color: shades.primary[600],
               margin: 0,
@@ -95,6 +114,8 @@ export const BootstrapButton = styled(Button)({
 });
 
 export const Sheets = styled(Sheet)({
+  fontFamily: 'Hind, sans-serif',
+  fontWeight: '500',
   backgroundColor: 'inherit',
   color: shades.primary[600],
   m:0,
@@ -110,6 +131,8 @@ export const Sheets = styled(Sheet)({
 
 
 export const BodySheets = styled(Sheet)({
+  fontFamily: 'Hind, sans-serif',
+  fontWeight: '500',
   backgroundColor: 'inherit',
   margin:'1rem 2rem',
   paddingTop: '3rem', 
