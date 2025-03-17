@@ -150,6 +150,12 @@ export const BodySheets = styled(Sheet)({
   }
   });
 
+export const WorkSheets = styled(BodySheets)({
+  width: '786px', 
+  '@media (max-width: 780px)' : {
+    width:'100%'
+  }})
+
   export const appContainer={
     display: 'flex',
     flexDirection:'row', 
@@ -208,3 +214,6 @@ export const BodySheets = styled(Sheet)({
       width: '100%',
       whiteSpace: 'normal',
       wordWrap: 'break-word'}
+
+    export const socialNav={ my: 3,  display: 'flex',  '@media (max-width: 780px)' : {m:0, flexDirection: 'row'}
+  }

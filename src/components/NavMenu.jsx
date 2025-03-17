@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { GitHub, LinkedIn } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
-import { navBrand, navList, navSub, navTitle, Sheets } from '../template/theme';
+import { navBrand, navList, navSub, navTitle, Sheets, socialNav } from '../template/theme';
 import '@fontsource/hind/500.css';
 import '@fontsource/hind/600.css';
 import '@fontsource-variable/tourney';
@@ -15,9 +15,7 @@ export default function NavMenu() {
         <List sx={{display:'flex', flexDirection:'col', width:'20rem', '@media (max-width: 780px)' : {flexDirection:'row', justifyContent:'space-between'}}}>
         <ListSubheader sx={{width:'20rem', '@media (max-width: 780px)' : {width:'100vw'}}}>
           <Typography level="h1" variant ='h1' sx={navBrand}>
-            <Link to="/" level='inherit'>
-                Cam Bui  
-              </Link>
+            <Link to="/" level='inherit'> Cam Bui </Link>
           </Typography>
         </ListSubheader>
         <ListItem>
@@ -35,24 +33,16 @@ export default function NavMenu() {
           <List sx={{'@media (max-width: 780px)' : {flexDirection: 'row',}}}>
           <ListItem >
               <Typography level='body-lg' fontFamily='Tourney Variable, sans-serif'>
-                <Link to="/" >
-                home
-                </Link>
+                <Link to="/" >home</Link>
               </Typography>
           </ListItem >
           <ListItem>
             <Typography level='body-lg' fontFamily='Tourney Variable, sans-serif'>
-              <Link to="/work" level='body-lg'>
-                work
-              </Link>
+              <Link to="/work" level='body-lg'>  work  </Link>
             </Typography>
           </ListItem>
           </List>
-          <ListSubheader sx={{
-            my: 3, 
-            display: 'flex',
-            '@media (max-width: 780px)' : {m:0, flexDirection: 'row'}
-            }}>
+          <ListSubheader sx={socialNav}>
             <Typography sx={{fontFamily:'Playfair Display Variable', width:'10vw', '@media (max-width: 780px)': {m:0, flexDirection: 'row'} }}>
                 <Link to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer"><GitHub sx={{fontSize:'2.5rem', '@media (max-width: 780px)' : {fontSize:'1.5rem'}}}/></Link>
                 <Link to="https://www.linkedin.com/in/cambui/" target="_blank" rel="noopener noreferrer"><LinkedIn sx={{fontSize:'2.5rem', '@media (max-width: 780px)' : {fontSize:'1.5rem'}}}/></Link>
