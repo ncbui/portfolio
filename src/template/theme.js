@@ -149,3 +149,22 @@ export const BodySheets = styled(Sheet)({
     m: 0,
   }
   });
+
+  export const appContainer={
+    display: 'flex',
+    flexDirection:'row', 
+    width: '100vw',
+    maxWidth: '968px',
+    height: '100vh',
+    overflow: 'hidden',
+    m: 0,
+    p: 0,
+    '@media (max-width: 780px)' : {
+      flexDirection:'column',
+      maxWidth: '100vw',
+      overflowX: 'hidden',
+      overflowY: 'auto',
+      m: 0,
+      p: 0,
+    }
+  }

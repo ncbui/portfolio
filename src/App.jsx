@@ -1,12 +1,12 @@
 import { Routes, Route } from 'react-router-dom';
+import {CssBaseline, GlobalStyles, } from "@mui/material";
+import { ThemeProvider } from '@mui/styles';
 import { Container } from '@mui/joy';
+import { theme, global, appContainer } from './template/theme';
+import ErrorPage from './pages/ErrorPage';
 import NavMenu from './components/NavMenu';
 import Home from './pages/Home';
 import Work from './pages/Work';
-import ErrorPage from './pages/ErrorPage';
-import {CssBaseline, GlobalStyles, } from "@mui/material";
-import { ThemeProvider } from '@mui/styles';
-import { theme, global } from './template/theme';
 
 export default function App() {
   return (
@@ -14,24 +14,7 @@ export default function App() {
       <CssBaseline />
       <GlobalStyles styles={global} />
       <Container 
-        sx={{
-          display: 'flex',
-          flexDirection:'row', 
-          width: '100vw',
-          maxWidth: '968px',
-          height: '100vh',
-          overflow: 'hidden',
-          m: 0,
-          p: 0,
-          '@media (max-width: 780px)' : {
-            flexDirection:'column',
-            maxWidth: '100vw',
-            overflowX: 'hidden',
-            overflowY: 'auto',
-            m: 0,
-            p: 0,
-          }
-        }}
+        sx={appContainer}
         >
           <NavMenu/>  
           <Routes>
