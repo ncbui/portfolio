@@ -102,11 +102,8 @@ export default function WorkExperience () {
                           <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.primary.bright, fontSize:'80%'}}/>
                       </Typography>
                       <List sx={
-                          {fontSize: '100%',
-                            display: "inline",
-                            flexFlow: "column wrap",
-                            '@media (max-width: 780px)' : {
-                          }
+                          {fontSize: '90%',
+                            width: '90%',
                       }}>
                           {listA(a.summary)}
                           {makeButtons(a)}
@@ -161,7 +158,7 @@ export default function WorkExperience () {
   
     const expTable = () => {
       return (
-        <TableContainer sx={{ border: '1px solid black', width: '786px', '@media (max-width: 780px)' : {width:'100%'}}}>
+        <TableContainer>
         <Table aria-label="experience table" > 
           <TableBody>
             {makeWorkRow(experience.work)}
@@ -174,7 +171,7 @@ export default function WorkExperience () {
     
     return (
         <Box sx={{ p:0}}>
-            {expTable()}
+          {expTable()}
         </Box>
     )
 }
