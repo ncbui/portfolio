@@ -53,9 +53,9 @@
         "name": "Action & Consciousness Lab, San Francisco State University",
         "url": "https://faculty.sfsu.edu/~morsella/content/action-and-consciousness-laboratory",
         "startDate": "2016",
-        "endDate": "20119",
+        "endDate": "2019",
         "summary": "Proposed, conducted, and analyzed behavioral experiments on automatic visual and syntactic processing.",
-        "tools": [],
+        "tools": ["R"],
         "highlights": [
           "Conducted, and analyzed behavioral experiments on automatic visual and syntactic processing. https://doi.org/10.1037/cns0000208."]
         },
@@ -66,7 +66,7 @@
         "startDate": "2016",
         "endDate": "2027",
         "summary": "Intern in the inaugural cohort of HPW",
-        "tools": ["semi-structured interviews and focus groups","literature review"],
+        "tools": ["focus groups","literature review", "semi-structured interviews"],
         "highlights": [
           " Conducted focus groups for the newly-built Mashouf Wellness Center (MWC) that found that students on this commuter campus overwhelmingly needed places to rest. In 2024, MWC launched the Zen Den, a free space to nap at SFSU. "]
         }
