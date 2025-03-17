@@ -15,11 +15,11 @@ export default function NavMenu() {
       <List sx={{width:'20vw', }}>
         <List sx={{display:'flex', flexDirection:'col', width:'20rem', '@media (max-width: 780px)' : {flexDirection:'row', justifyContent:'space-between'}}}>
         <ListSubheader sx={{width:'20rem', '@media (max-width: 780px)' : {width:'100vw'}}}>
-            <Link to="/" level='inherit'> 
           <Typography level="h1" variant ='h1' sx={navBrand}>
+            <Link to="/" level='inherit'> 
             Cam Bui 
-          </Typography>
             </Link>
+          </Typography>
         </ListSubheader>
         <ListItem>
           <Typography level="h4" sx={navTitle}>
