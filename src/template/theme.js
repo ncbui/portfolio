@@ -49,7 +49,7 @@ export const style = {
       MuiTypography: {
         styleOverrides: {
           root: {
-            fontFamily: '',
+            fontFamily: 'Hind, sans-serif',
           },
         },
       },
@@ -168,3 +168,43 @@ export const BodySheets = styled(Sheet)({
       p: 0,
     }
   }
+
+  export const navList={'@media (max-width: 780px)' : {width:'100vw',
+     m:0,
+     borderBottom:'4px dotted',
+     borderColor: theme.palette.primary.bright,
+     boxShadow: '-.1rem 0 .4rem .4rem rgba(92, 100, 108, 0.1)',
+
+  }}
+  export const navSub={
+      color: theme.palette.primary.text,
+      fontFamily: ' Proza Libre, sans-serif', 
+      fontWeight: '600', 
+      marginBottom: '1rem',
+      width:'100%',
+      '@media (max-width: 780px)' : {
+        display:'none'}}
+
+  export const navBrand={ 
+    fontFamily: 'Tourney Variable, Proza Libre, sans-serif',
+    fontWeight: '600',
+     color: theme.palette.primary.text,
+     fontSize: '2rem',
+     '@media (max-width: 780px)' : {
+      fontSize: '1.6rem',
+      width:'25vw'
+    }}
+
+  export const navTitle={
+    fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  
+    fontWeight: '800', 
+    fontSize: '1rem',
+    color: theme.palette.primary.bright,
+    '@media (max-width: 780px)' : {
+    }}
+  
+    export const tableRow={ 
+      border: 0, p:0, m:0,   
+      width: '100%',
+      whiteSpace: 'normal',
+      wordWrap: 'break-word'}

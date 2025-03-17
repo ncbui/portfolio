@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { GitHub, LinkedIn } from '@mui/icons-material';
 import { useTheme } from '@mui/styles';
-import { Sheets } from '../template/theme';
+import { navBrand, navList, navSub, navTitle, Sheets } from '../template/theme';
 import '@fontsource/hind/500.css';
 import '@fontsource/hind/600.css';
 import '@fontsource-variable/tourney';
@@ -10,24 +10,24 @@ import '@fontsource-variable/tourney';
 export default function NavMenu() {
   const theme = useTheme()
   return (
-    <Sheets sx={{'@media (max-width: 780px)' : {width:'100vw', m:0, borderBottom:'4px dotted', borderColor: theme.palette.primary.bright, boxShadow: '-.1rem 0 .4rem .4rem rgba(92, 100, 108, 0.1)',}}}>
+    <Sheets sx={navList}>
       <List sx={{width:'20vw', }}>
         <List sx={{display:'flex', flexDirection:'col', width:'20rem', '@media (max-width: 780px)' : {flexDirection:'row', justifyContent:'space-between'}}}>
         <ListSubheader sx={{width:'20rem', '@media (max-width: 780px)' : {width:'100vw'}}}>
-          <Typography level="h1" variant ='h1' sx={{ fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  fontWeight: '600', color: theme.palette.primary.text, fontSize: '2rem', '@media (max-width: 780px)' : {fontSize: '1.6rem', width:'20vw'}}}>
+          <Typography level="h1" variant ='h1' sx={navBrand}>
             <Link to="/" level='inherit'>
                 Cam Bui  
               </Link>
           </Typography>
         </ListSubheader>
         <ListItem>
-          <Typography level="h4" sx={{fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  fontWeight: '900', color: theme.palette.primary.bright,'@media (max-width: 780px)' : {fontSize: '1rem',}}}>
+          <Typography level="h4" sx={navTitle}>
             Fullstack Devops Engineer
           </Typography>
         </ListItem>
         </List>
-        <ListItem sx={{marginBottom: '1rem', maxWidth:'15vw', '@media (max-width: 780px)' : {marginBottom:'1rem', display:'none'}}}>
-          <Typography level='body-sm' sx={{fontFamily: 'Hind, sans-serif', fontWeight: '600', color: theme.palette.primary.text,}}>
+        <ListItem sx={navSub}>
+          <Typography level='body-sm' sx={{color: theme.palette.primary.text,}}>
             I enable dev teams to customize GitOps best practices for their needs
           </Typography>
         </ListItem>

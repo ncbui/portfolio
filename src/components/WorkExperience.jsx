@@ -3,7 +3,7 @@ import {Table, TableContainer, TableBody, TableCell, TableRow, List, ListItem, B
 import TurnSlightRightOutlinedIcon from '@mui/icons-material/TurnSlightRightOutlined';
 import { useTheme } from '@mui/styles';
 import { Typography } from '@mui/joy';
-import { BootstrapButton } from '../template/theme';
+import { BootstrapButton, tableRow } from '../template/theme';
 
 const experience = {
     "work": [{
@@ -89,8 +89,8 @@ export default function WorkExperience () {
     
     const expTable = () => {
         return (
-            <TableContainer >
-            <Table aria-label="experience table" style={{maxWidth: '786px'}}> 
+            <TableContainer sx={{ width: '786px', '@media (max-width: 780px)' : {width:'100%'}}}>
+            <Table aria-label="experience table" > 
               <TableBody>
                 {makeWorkRow(experience.work)}
                 {makeEduRow(experience.education)}
@@ -105,7 +105,7 @@ export default function WorkExperience () {
             return (
             <TableRow
                     key={a+i}
-                    sx={{ border: 0, p:0, m:0,  }}
+                    sx={tableRow}
                   >
                 <TableCell scope="row" sx={{ verticalAlign: 'top', p:0, m:0,  borderRight:'3px dotted', borderColor:theme.palette.primary.bright, borderBottom: 0,}}>
                         <Typography sx={{fontSize:"85%"}}> {a.dates} </Typography>
@@ -115,7 +115,13 @@ export default function WorkExperience () {
                             <Link to={a.website} target="_blank" rel="noopener noreferrer"><b>{a.position}</b>  {a.company}</Link> 
                             <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.primary.bright, fontSize:'80%'}}/>
                         </Typography>
-                        <List sx={{fontSize: '90%'}}>
+                        <List sx={
+                            {fontSize: '90%',
+                              display: "flex",
+                              flexFlow: "column wrap",
+                              '@media (max-width: 780px)' : {
+                            }
+                        }}>
                             {listA(a.summary)}
                             {makeButtons(a)}
                         </List>
@@ -129,11 +135,11 @@ export default function WorkExperience () {
         return( exp.map((a,i)=>{
             return (
             <TableRow
-                    key={a+i}
-                    sx={{ border: 0, p:0, m:0,  }}
-                  >
+                key={a+i}
+                sx={tableRow}
+                >
                 <TableCell scope="row" sx={{ horizontalAlign: 'right', verticalAlign: 'top', p:0, m:0,  borderRight:'3px dotted', borderColor:theme.palette.primary.bright, borderBottom: 0,}}>
-                        <Typography sx={{fontSize:"85%"}}> {a.dates} </Typography>
+                    <Typography sx={{fontSize:"85%"}}> {a.dates} </Typography>
                     </TableCell>
                     <TableCell sx={{ verticalAlign: 'top', py:"0.2rem", m:0, borderBottom: 0, maxWidth: '80%' }}>
                         <Typography sx={{fontSize:"95%"}}>
