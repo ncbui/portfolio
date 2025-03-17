@@ -8,15 +8,18 @@ import '@fontsource/hind/600.css';
 import '@fontsource-variable/tourney';
 
 export default function NavMenu() {
+
   const theme = useTheme()
   return (
     <Sheets sx={navList}>
       <List sx={{width:'20vw', }}>
         <List sx={{display:'flex', flexDirection:'col', width:'20rem', '@media (max-width: 780px)' : {flexDirection:'row', justifyContent:'space-between'}}}>
         <ListSubheader sx={{width:'20rem', '@media (max-width: 780px)' : {width:'100vw'}}}>
+            <Link to="/" level='inherit'> 
           <Typography level="h1" variant ='h1' sx={navBrand}>
-            <Link to="/" level='inherit'> Cam Bui </Link>
+            Cam Bui 
           </Typography>
+            </Link>
         </ListSubheader>
         <ListItem>
           <Typography level="h4" sx={navTitle}>
@@ -25,19 +28,19 @@ export default function NavMenu() {
         </ListItem>
         </List>
         <ListItem sx={navSub}>
-          <Typography level='body-sm' sx={{color: theme.palette.primary.text,}}>
+          <Typography level='h5'>
             I enable dev teams to customize GitOps best practices for their needs
           </Typography>
         </ListItem>
-        <List sx={{ fontFamily: 'Tourney Variable, sans-serif', fontWeight: '400','@media (max-width: 780px)' : {flexDirection: 'row', justifyContent:'start', m:0, p:0}}}>
+        <List sx={{ '@media (max-width: 780px)' : {flexDirection: 'row', justifyContent:'start', m:0, p:0}}}>
           <List sx={{'@media (max-width: 780px)' : {flexDirection: 'row',}}}>
           <ListItem >
-              <Typography level='body-lg' fontFamily='Tourney Variable, sans-serif'>
+              <Typography level='body-lg'>
                 <Link to="/" >home</Link>
               </Typography>
           </ListItem >
           <ListItem>
-            <Typography level='body-lg' fontFamily='Tourney Variable, sans-serif'>
+            <Typography level='body-lg'>
               <Link to="/work" level='body-lg'>  work  </Link>
             </Typography>
           </ListItem>

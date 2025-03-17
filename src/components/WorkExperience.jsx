@@ -86,24 +86,25 @@ const experience = {
 
 export default function WorkExperience () { 
     const theme = useTheme()
-    
-    
 
     const makeWorkRow = (exp) =>{
         return( exp.map((a,i)=>{
             return (
             <TableRow key={a+i} sx={tableRow} >
-              <TableCell scope="row" sx={{ verticalAlign: 'top', p:0, m:0,  borderRight:'3px dotted', borderColor:theme.palette.primary.bright, borderBottom: 0,}}>
-                      <Typography sx={{fontSize:"85%"}}> {a.dates} </Typography>
+              <TableCell scope="row" sx={{ verticalAlign: 'top', p:0, m:0,  borderRight:'3px dotted', borderColor:theme.palette.bright, borderBottom: 0,}}>
+                      <Typography sx={{fontSize:"85%", color: theme.palette.bright}}> {a.dates} </Typography>
                   </TableCell>
                   <TableCell sx={{ verticalAlign: 'top', py:"0.2rem", m:0, borderBottom: 0, maxWidth: '80%', '@media (max-width: 786px)': {maxWidth: '50vw'} }}>
-                      <Typography sx={{fontSize:"95%"}}>
-                          <Link to={a.website} target="_blank" rel="noopener noreferrer"><b>{a.position}</b>  {a.company}</Link> 
-                          <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.primary.bright, fontSize:'80%'}}/>
-                      </Typography>
+                      <Link to={a.website} target="_blank" rel="noopener noreferrer">
+                        <Typography sx={{fontSize:"100%", color: theme.palette.light, }}>
+                            <b>{a.position}</b>  {a.company}
+                            <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'1rem'}}/>
+                        </Typography >
+                      </Link> 
                       <List sx={
                           {fontSize: '90%',
                             width: '90%',
+                            color: theme.palette.text,
                       }}>
                           {listA(a.summary)}
                           {makeButtons(a)}
@@ -119,7 +120,7 @@ export default function WorkExperience () {
     const listA = (acheivements) => {
         return (
             <>
-            {acheivements.map((a,i)=>{return <ListItem key={i}>{a}</ListItem>})}
+            {acheivements.map((a,i)=>{return <ListItem key={i} sx={{color:'inherit', fontFamily:'Hind'}}>{a}</ListItem>})}
             </>
         )
     }
@@ -144,13 +145,13 @@ export default function WorkExperience () {
       return( exp.map((a,i)=>{
           return (
           <TableRow key={a+i} sx={tableRow} >
-              <TableCell scope="row" sx={{ horizontalAlign: 'right', verticalAlign: 'top', p:0, m:0,  borderRight:'3px dotted', borderColor:theme.palette.primary.bright, borderBottom: 0,}}>
-                <Typography sx={{fontSize:"85%"}}> {a.dates} </Typography>
+              <TableCell scope="row" sx={{ horizontalAlign: 'right', verticalAlign: 'top', p:0, m:0,  borderRight:'3px dotted', borderColor:theme.palette.bright, borderBottom: 0,}}>
+                <Typography sx={{fontSize:"85%", color: theme.palette.bright}}> {a.dates} </Typography>
               </TableCell>
               <TableCell sx={{ verticalAlign: 'top', py:"0.2rem", m:0, borderBottom: 0, maxWidth: '80%' }}>
                 <Typography sx={{fontSize:"95%"}}>
                   <Link to={a.website} target="_blank" rel="noopener noreferrer"><b>{a.degree} </b> {a.program} {a.institution}</Link> 
-                  <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.primary.bright, fontSize:'80%'}}/>
+                  <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'80%'}}/>
                 </Typography>
               </TableCell>    
           </TableRow>
