@@ -144,8 +144,8 @@ export const BodySheets = styled(Sheet)({
   justifyContent: 'space-between',
   // boxShadow: '-.1rem 0 .4rem .4rem rgba(92, 100, 108, 0.1)',
   '@media (max-width: 780px)' : {
-    padding: '2rem',
-    width:'100vw',
+    padding: '1vh 1vw',
+    width:'90vw',
     m: 0,
   }
   });

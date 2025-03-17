@@ -87,70 +87,37 @@ const experience = {
 export default function WorkExperience () { 
     const theme = useTheme()
     
-    const expTable = () => {
-        return (
-            <TableContainer sx={{ width: '786px', '@media (max-width: 780px)' : {width:'100%'}}}>
-            <Table aria-label="experience table" > 
-              <TableBody>
-                {makeWorkRow(experience.work)}
-                {makeEduRow(experience.education)}
-              </TableBody>
-            </Table>
-          </TableContainer>
-        )
-    }
+    
 
     const makeWorkRow = (exp) =>{
         return( exp.map((a,i)=>{
             return (
-            <TableRow
-                    key={a+i}
-                    sx={tableRow}
-                  >
-                <TableCell scope="row" sx={{ verticalAlign: 'top', p:0, m:0,  borderRight:'3px dotted', borderColor:theme.palette.primary.bright, borderBottom: 0,}}>
-                        <Typography sx={{fontSize:"85%"}}> {a.dates} </Typography>
-                    </TableCell>
-                    <TableCell sx={{ verticalAlign: 'top', py:"0.2rem", m:0, borderBottom: 0, maxWidth: '80%', '@media (max-width: 786px)': {maxWidth: '50vw'} }}>
-                        <Typography sx={{fontSize:"95%"}}>
-                            <Link to={a.website} target="_blank" rel="noopener noreferrer"><b>{a.position}</b>  {a.company}</Link> 
-                            <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.primary.bright, fontSize:'80%'}}/>
-                        </Typography>
-                        <List sx={
-                            {fontSize: '90%',
-                              display: "flex",
-                              flexFlow: "column wrap",
-                              '@media (max-width: 780px)' : {
-                            }
-                        }}>
-                            {listA(a.summary)}
-                            {makeButtons(a)}
-                        </List>
-                    </TableCell>    
+            <TableRow key={a+i} sx={tableRow} >
+              <TableCell scope="row" sx={{ verticalAlign: 'top', p:0, m:0,  borderRight:'3px dotted', borderColor:theme.palette.primary.bright, borderBottom: 0,}}>
+                      <Typography sx={{fontSize:"85%"}}> {a.dates} </Typography>
+                  </TableCell>
+                  <TableCell sx={{ verticalAlign: 'top', py:"0.2rem", m:0, borderBottom: 0, maxWidth: '80%', '@media (max-width: 786px)': {maxWidth: '50vw'} }}>
+                      <Typography sx={{fontSize:"95%"}}>
+                          <Link to={a.website} target="_blank" rel="noopener noreferrer"><b>{a.position}</b>  {a.company}</Link> 
+                          <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.primary.bright, fontSize:'80%'}}/>
+                      </Typography>
+                      <List sx={
+                          {fontSize: '100%',
+                            display: "inline",
+                            flexFlow: "column wrap",
+                            '@media (max-width: 780px)' : {
+                          }
+                      }}>
+                          {listA(a.summary)}
+                          {makeButtons(a)}
+                      </List>
+                  </TableCell>    
             </TableRow>
         )
     }))
     }
 
-    const makeEduRow = (exp) =>{
-        return( exp.map((a,i)=>{
-            return (
-            <TableRow
-                key={a+i}
-                sx={tableRow}
-                >
-                <TableCell scope="row" sx={{ horizontalAlign: 'right', verticalAlign: 'top', p:0, m:0,  borderRight:'3px dotted', borderColor:theme.palette.primary.bright, borderBottom: 0,}}>
-                    <Typography sx={{fontSize:"85%"}}> {a.dates} </Typography>
-                    </TableCell>
-                    <TableCell sx={{ verticalAlign: 'top', py:"0.2rem", m:0, borderBottom: 0, maxWidth: '80%' }}>
-                        <Typography sx={{fontSize:"95%"}}>
-                            <Link to={a.website} target="_blank" rel="noopener noreferrer"><b>{a.degree} </b> {a.program} {a.institution}</Link> 
-                            <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.primary.bright, fontSize:'80%'}}/>
-                        </Typography>
-                    </TableCell>    
-            </TableRow>
-        )
-    }))
-    }
+    
 
     const listA = (acheivements) => {
         return (
@@ -162,11 +129,48 @@ export default function WorkExperience () {
 
     const makeButtons = ({tools}) =>{
         return( 
-            <ListItem>
+            <>
             {tools.map((tool)=>{
-                return <BootstrapButton variant="outlined" key={tool+tool.indexOf()} >{tool}</BootstrapButton>})}
-            </ListItem>
+              return (
+              <BootstrapButton 
+                variant="outlined" 
+                key={tool+tool.indexOf()}
+                sx={{width:'fit-content', m: '.2rem'}}
+                >
+                {tool}
+              </BootstrapButton>)})}
+            </> 
         )}
+
+
+    const makeEduRow = (exp) =>{
+      return( exp.map((a,i)=>{
+          return (
+          <TableRow key={a+i} sx={tableRow} >
+              <TableCell scope="row" sx={{ horizontalAlign: 'right', verticalAlign: 'top', p:0, m:0,  borderRight:'3px dotted', borderColor:theme.palette.primary.bright, borderBottom: 0,}}>
+                <Typography sx={{fontSize:"85%"}}> {a.dates} </Typography>
+              </TableCell>
+              <TableCell sx={{ verticalAlign: 'top', py:"0.2rem", m:0, borderBottom: 0, maxWidth: '80%' }}>
+                <Typography sx={{fontSize:"95%"}}>
+                  <Link to={a.website} target="_blank" rel="noopener noreferrer"><b>{a.degree} </b> {a.program} {a.institution}</Link> 
+                  <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.primary.bright, fontSize:'80%'}}/>
+                </Typography>
+              </TableCell>    
+          </TableRow>
+      )}))}
+  
+    const expTable = () => {
+      return (
+        <TableContainer sx={{ border: '1px solid black', width: '786px', '@media (max-width: 780px)' : {width:'100%'}}}>
+        <Table aria-label="experience table" > 
+          <TableBody>
+            {makeWorkRow(experience.work)}
+            {makeEduRow(experience.education)}
+          </TableBody>
+        </Table>
+      </TableContainer>
+    )
+    }
     
     return (
         <Box sx={{ p:0}}>
