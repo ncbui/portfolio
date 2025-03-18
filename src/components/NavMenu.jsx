@@ -2,9 +2,7 @@ import { Link } from 'react-router-dom';
 import { Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { GitHub, LinkedIn } from '@mui/icons-material';
 import { NavSubtitle, NavName,  NavTitleText, NavSheets, NavSocials } from '../template/theme';
-import '@fontsource/hind/500.css';
-import '@fontsource/hind/600.css';
-import '@fontsource-variable/tourney';
+
 
 export default function NavMenu() {
   return (

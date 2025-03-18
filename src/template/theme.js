@@ -116,8 +116,8 @@ export const BootstrapButton = styled(Button)(( ) => ({
   backgroundColor: theme.palette.shiny,
   borderColor: theme.palette.shiny,
   color: theme.palette.dark1,
-  fontWeight: '800',
-  fontFamily: 'Tourney Variable',
+  fontWeight: '700',
+  fontFamily: 'Hind',
   lineHeight: 1,
   '&:hover': {
     backgroundColor: theme.palette.light2,
