@@ -3,12 +3,11 @@ import {Table, TableContainer, TableBody} from '@mui/material';
 import TurnSlightRightOutlinedIcon from '@mui/icons-material/TurnSlightRightOutlined';
 import { BootstrapButton, NavTitleText, WorkRow, WorkDateCell, WorkDate, WorkBodyCell, HeaderCell, WorkPosition, WorkList, WorkListItem } from '../template/theme';
 import { useTheme } from '@mui/styles';
-import * as resume from "../template/resume.json"
+import * as resume from '../../resume.json'
 import { Typography } from '@mui/joy';
 
 export default function WorkExperience () { 
     const theme = useTheme()
-
     const makeWorkRow=(work)=>{
       return( 
         work.map((w)=>{

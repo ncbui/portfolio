@@ -5,7 +5,7 @@
     "image": "",
     "email": "bui.cam@proton.me",
     "phone": "",
-    "url": "ncbui.github.com",
+    "url": "https://ncbui.github.io/",
     "summary": "Experienced software engineer with expertise in DevOps, cloud platforms, and full-stack development. Let's talk about clearing developer friction to make room for communication and collaboration.",
     "location": {
       "address": "",
@@ -173,22 +173,23 @@
     "name": "Painting",
     "keywords": [
       "Portraits",
-      "Oil painting"
+      "Oil",
+      "Acrylic"
     ]
   }],
   "references": [{
-    "name": "Jane Doe",
-    "reference": "Reference…"
+    "name": "",
+    "reference": ""
   }],
   "projects": [{
-    "name": "Project",
-    "startDate": "2019-01-01",
-    "endDate": "2021-01-01",
-    "description": "Description...",
+    "name": "",
+    "startDate": "",
+    "endDate": "",
+    "description": "",
     "tools": [],
     "highlights": [
-      "Won award at AIHacks 2016"
+      ""
     ],
-    "url": "https://project.com/"
+    "url": ""
   }]
 }
