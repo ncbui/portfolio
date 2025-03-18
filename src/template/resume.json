@@ -20,9 +20,20 @@
       "url": "https://github.com/ncbui"},
       {"network": "linkedin",
       "username": "ncbui",
-      "url": "company.com"}
+      "url": "https://www.linkedin.com/in/cambui/"}
       ]},
-    "work": [{
+    "work": [
+      {
+        "name": "Family and Wellness Sabbatical",
+        "position": "",
+        "url": "",
+        "startDate": "2024",
+        "endDate": "2025",
+        "summary": "family and wellness sabbatical",
+        "tools": ["clay", "canvas", "oil paint", "acrylic paint", "sculpture", "roses"],
+        "highlights": [
+        ]},
+      {
         "name": "Thoughtworks, Inc.",
         "position": "Consultant Software Developer",
         "url": "https://www.thoughtworks.com",
