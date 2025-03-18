@@ -5,14 +5,14 @@ import { styled } from "@mui/material/styles";
 export const shades = {
   primary: {
     100: "rgb(224, 217, 252)",
-    200: " #ea64b7",
+    200: "rgb(222, 139, 190)",
     300: " #451233",
     400: " #3D2645",
     500: "rgb(52, 0, 33)",
     600: "#290129",
     700: " #000000",
     800: "#bdb8d2",
-    900: 'goldenrod',
+    900: '#DFB64E',
   },
 }
 
@@ -109,14 +109,13 @@ export const BootstrapButton = styled(Button)(( ) => ({
   padding: '3px 10px',
   border: '1px solid',
   borderRadius: '1rem',
-  backgroundColor: 'goldenrod',
-  borderColor:'goldenrod',
+  backgroundColor: shades.primary[900],
+  borderColor: shades.primary[900],
   color: theme.palette.dark1,
   fontWeight: '800',
   fontFamily: 'Tourney Variable',
   lineHeight: 1,
   '&:hover': {
-    // color: theme.palette.text,
     backgroundColor: theme.palette.bright,
     borderColor: theme.palette.bright,
   },
@@ -124,8 +123,8 @@ export const BootstrapButton = styled(Button)(( ) => ({
     boxShadow: 'none',
   },
   '&:disabled': {
-    borderColor: theme.palette.secondary.text,
-    color: theme.palette.secondary.text,
+    borderColor: theme.palette.text,
+    color: theme.palette.text,
   },
 }));
 
@@ -137,7 +136,6 @@ export const Sheets = styled(Sheet)(( ) => ({
   m:0,
   paddingTop: '2rem', 
   paddingLeft: '1rem',
-  // boxShadow: '-.1rem 0 .4rem .4rem rgba(92, 100, 108, 0.1)',
   '@media (max-width: 780px)' : {
     padding:'1rem',
     width:'100vw',
@@ -152,7 +150,6 @@ export const BodySheets = styled(Sheets)(( ) => ({
   width:'65vw',
   height: '100vh',
   justifyContent: 'space-between',
-  // boxShadow: '-.1rem 0 .4rem .4rem rgba(92, 100, 108, 0.1)',
   '@media (max-width: 780px)' : {
     padding: '1vh 1vw',
     width:'90vw',
@@ -191,7 +188,6 @@ export const NavSheets=styled(Sheets)(( ) => ({
   m:0,
   borderBottom:'4px dotted',
   borderColor: theme.palette.bright,
-  // boxShadow: '0rem 0 0rem .4rem rgba(92, 100, 108, 0.1)',
   }
 }));
 export const NavSubtitle=styled(ListItem)(( ) => ({
@@ -200,6 +196,7 @@ export const NavSubtitle=styled(ListItem)(( ) => ({
   fontWeight: '600', 
   marginBottom: '1rem',
   width:'inherit',
+  lineHeight: 1.1,
   '@media (max-width: 780px)' : {
     display:'none'}
 }));
@@ -209,14 +206,14 @@ export const NavName=styled(Typography)(( ) => ({
   color: theme.palette.light,
   fontSize: '3rem',
   '@media (max-width: 780px)' : {
-  // fontSize: '2rem',
   width:'40vw'}
 }));
 export const NavTitleText = styled(Typography)(( ) => ({
   color: theme.palette.bright,
   fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  
   fontWeight: '800', 
-  fontSize: '1rem',
+  fontSize: '1.4rem',
+  lineHeight: 1,
   '@media (max-width: 780px)' : {fontSize: '1.3rem'}
 }));
 export const NavSocials=styled(ListSubheader)(( ) => ({
@@ -249,7 +246,6 @@ export const WorkDateCell = styled(TableCell)(( ) => ({
   fontWeight: 'bold',
   color: theme.palette.bright,
   '@media (max-width: 780px)' : {
-    // width:'5vw'
   }
 }));
 export const WorkDate = styled(Typography)(( ) => ({
