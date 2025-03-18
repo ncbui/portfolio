@@ -1,6 +1,6 @@
-import { styled, createTheme } from '@mui/material';
-import { Button } from '@mui/material/';
-import { Sheet } from '@mui/joy';
+import { createTheme, TableCell, TableRow } from '@mui/material';
+import { Sheet, Button, Container, Typography, List, ListItem, ListSubheader } from '@mui/joy';
+import { styled } from "@mui/material/styles";
 
 export const shades = {
   primary: {
@@ -17,6 +17,13 @@ export const shades = {
 }
 
 export const style = { 
+  root: {
+    height: '100vh',
+    overflow: 'hidden',
+    width: '100vw',
+    padding: 0,
+    margin: 0,
+  },
   palette: {
       light: shades.primary[100],
       bright: shades.primary[200],
@@ -94,21 +101,20 @@ export const global = {
               },
             },
           }
-
-export const BootstrapButton = styled(Button)({
+export const BootstrapButton = styled(Button)(( ) => ({
   textTransform: 'none',
   fontSize: '80%',
-  padding: '6px 6px',
+  marginRight: '.2rem',
+  marginBottom: '.3rem',
+  padding: '3px 10px',
   border: '1px solid',
   borderRadius: '1rem',
-  marginRight: '.5rem',
   backgroundColor: 'goldenrod',
   borderColor:'goldenrod',
   color: theme.palette.dark1,
-  fontWeight: '600',
+  fontWeight: '800',
   fontFamily: 'Tourney Variable',
   lineHeight: 1,
-  // backgroundColor: 'inherit',
   '&:hover': {
     // color: theme.palette.text,
     backgroundColor: theme.palette.bright,
@@ -121,13 +127,13 @@ export const BootstrapButton = styled(Button)({
     borderColor: theme.palette.secondary.text,
     color: theme.palette.secondary.text,
   },
-});
+}));
 
-export const Sheets = styled(Sheet)({
+export const Sheets = styled(Sheet)(( ) => ({
   fontFamily: 'Hind, sans-serif',
   fontWeight: '500',
   backgroundColor: 'inherit',
-  color: shades.primary[600],
+  color: theme.palette.text,
   m:0,
   paddingTop: '2rem', 
   paddingLeft: '1rem',
@@ -137,20 +143,13 @@ export const Sheets = styled(Sheet)({
     width:'100vw',
     m:0,
   }
-});
-
-
-export const BodySheets = styled(Sheet)({
-  fontFamily: 'Hind, sans-serif',
-  fontWeight: '500',
-  color: theme.palette.text,
-  backgroundColor: 'inherit',
-  margin:'1rem 2rem',
-  paddingTop: '3rem', 
+}));
+export const BodySheets = styled(Sheets)(( ) => ({
+  m:0,
+  paddingTop: '4rem', 
   paddingLeft: '4rem',
   paddingRight: '2rem',
-  width:'80vw',
-  overflow:'auto',
+  width:'65vw',
   height: '100vh',
   justifyContent: 'space-between',
   // boxShadow: '-.1rem 0 .4rem .4rem rgba(92, 100, 108, 0.1)',
@@ -159,77 +158,133 @@ export const BodySheets = styled(Sheet)({
     width:'90vw',
     m: 0,
   }
-  });
-
-export const WorkSheets = styled(BodySheets)({
-  width: '786px', 
+  }));
+  export const WorkSheets = styled(BodySheets)(( ) => ({
+    m:0,
+    padding:'3rem 0',
+    overflow: 'auto',
+    '@media (max-width: 780px)' : {
+      width:'100vw',
+    }
+  }));
+export const AppContainer = styled(Container)(( ) => ({
+  display: 'flex',
+  flexDirection:'row', 
+  justifyContent: 'center',
+  width: '100vw',
+  height: '100vh',
+  overflow: 'hidden',
+  m: 0,
+  p: 0,
   '@media (max-width: 780px)' : {
-    width:'100%'
-  }})
-
-  export const appContainer={
-    display: 'flex',
-    flexDirection:'row', 
-    width: '100vw',
-    maxWidth: '968px',
-    height: '100vh',
-    overflow: 'hidden',
+    flexDirection:'column',
+    overflowX: 'hidden',
+    overflowY: 'auto',
     m: 0,
     p: 0,
-    '@media (max-width: 780px)' : {
-      flexDirection:'column',
-      maxWidth: '100vw',
-      overflowX: 'hidden',
-      overflowY: 'auto',
-      m: 0,
-      p: 0,
-    }
   }
-
-  export const navList={'@media (max-width: 780px)' : {
-    width:'100vw',
-    m:0,
-    borderBottom:'4px dotted',
-    borderColor: theme.palette.bright,
-    boxShadow: '-.1rem 0 .4rem .4rem rgba(92, 100, 108, 0.1)',
-
-  }}
-  export const navSub={
-    color: theme.palette.text,
-    fontFamily: 'Hind, sans-serif', 
-    fontWeight: '600', 
-    marginBottom: '1rem',
-    width:'100%',
-    '@media (max-width: 780px)' : {
-      display:'none'}
-    }
-
-  export const navBrand={ 
-    fontFamily: 'Tourney Variable, Proza Libre, sans-serif',
-    fontWeight: '600',
-    color: theme.palette.light,
-    fontSize: '3rem',
-    '@media (max-width: 780px)' : {
-    // fontSize: '2rem',
-    width:'40vw'
-  }}
-
-  export const navTitle={
-    fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  
-    fontWeight: '800', 
-    fontSize: '1rem',
-    color: theme.palette.bright,
-    '@media (max-width: 780px)' : {
-    }}
-  
-    export const tableRow={ 
-      border: 0, p:0, m:0,   
-      width: '100%',
-      whiteSpace: 'normal',
-      wordWrap: 'break-word'}
-
-    export const socialNav={ 
-      my: 3,  
-      display: 'flex',  
-      '@media (max-width: 780px)' : {m:0, flexDirection: 'row'}
+}));
+export const NavSheets=styled(Sheets)(( ) => ({
+  width:'30vw',
+  '@media (max-width: 780px)' : {
+  width:'100vw',
+  m:0,
+  borderBottom:'4px dotted',
+  borderColor: theme.palette.bright,
+  // boxShadow: '0rem 0 0rem .4rem rgba(92, 100, 108, 0.1)',
   }
+}));
+export const NavSubtitle=styled(ListItem)(( ) => ({
+  color: theme.palette.text,
+  fontFamily: 'Hind, sans-serif', 
+  fontWeight: '600', 
+  marginBottom: '1rem',
+  width:'inherit',
+  '@media (max-width: 780px)' : {
+    display:'none'}
+}));
+export const NavName=styled(Typography)(( ) => ({
+  fontFamily: 'Tourney Variable, Proza Libre, sans-serif',
+  fontWeight: '600',
+  color: theme.palette.light,
+  fontSize: '3rem',
+  '@media (max-width: 780px)' : {
+  // fontSize: '2rem',
+  width:'40vw'}
+}));
+export const NavTitleText = styled(Typography)(( ) => ({
+  color: theme.palette.bright,
+  fontFamily: 'Tourney Variable, Proza Libre, sans-serif',  
+  fontWeight: '800', 
+  fontSize: '1rem',
+  '@media (max-width: 780px)' : {fontSize: '1.3rem'}
+}));
+export const NavSocials=styled(ListSubheader)(( ) => ({
+  my: 3,  
+  display: 'flex',  
+  flexDirection: 'row',
+  width:'20vw',
+  '@media (max-width: 780px)' : {width:'20vw',m:0, flexDirection: 'row'}
+}));
+export const WorkRow = styled(TableRow)(( ) => ({ 
+  p:0, 
+  m:0,   
+  lineHeight: 1,
+  whiteSpace: 'normal',
+  wordWrap: 'break-word',
+  display: 'flex',
+  flexDirection: 'row',
+  '@media (max-width: 780px)' : {
+    flexDirection: 'col',
+    maxWidth: '90vw'
+  }
+}));
+export const WorkDateCell = styled(TableCell)(( ) => ({ 
+  verticalAlign: 'top', 
+  alignItems: 'left',
+  borderRight:'3px dotted', 
+  borderColor:theme.palette.bright, 
+  borderBottom: 0,
+  fontSize:'85%', 
+  fontWeight: 'bold',
+  color: theme.palette.bright,
+  '@media (max-width: 780px)' : {
+    // width:'5vw'
+  }
+}));
+export const WorkDate = styled(Typography)(( ) => ({
+  fontSize:'.8rem', 
+  fontWeight: 'bold',
+  color: theme.palette.text,
+}));
+export const WorkBodyCell = styled(TableCell)(( ) => ({ 
+  verticalAlign: 'top', 
+  borderBottom: 0, 
+  '@media (max-width: 786px)': {} 
+  }));
+
+export const WorkPosition = styled(Typography)(( ) => ({
+  fontSize:'1rem',
+  fontWeight: '800',
+  color: theme.palette.light,
+}));
+export const WorkList = styled(List)(( ) => ({
+  fontSize: '1rem', color: theme.palette.text,
+  whiteSpace: 'normal',
+  wordWrap: 'break-word',
+}));
+export const WorkListItem = styled(ListItem)(( ) => ({
+  color:'inherit', fontFamily:'Hind',
+  whiteSpace: 'normal',
+  wordWrap: 'break-word',
+}));
+export const HeaderCell = styled(TableCell)(( ) => ({
+  horizontalAlign: 'right', 
+  verticalAlign: 'top', 
+  p:0, 
+  m:0,  
+  borderColor:theme.palette.bright,  
+  fontWeight:'400',
+  borderBottom: 0,
+
+}));

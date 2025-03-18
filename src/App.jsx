@@ -15,9 +15,9 @@ export default function App() {
       <AppContainer>
           <NavMenu/>  
           <Routes>
-              <Route exact path="/" element={<Home />} />
-              <Route path="/work" element={<Work />} />
-              <Route element={<ErrorPage />} />
+            <Route exact path="/" element={<Home />} />
+            <Route path="/work" element={<Work />} />
+            <Route element={<ErrorPage />} />
           </Routes>
       </AppContainer>
     </ThemeProvider>
