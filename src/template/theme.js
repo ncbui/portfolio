@@ -209,8 +209,7 @@ export const NavName=styled(Typography)(( ) => ({
   fontWeight: '600',
   color: theme.palette.light,
   fontSize: '3rem',
-  '@media (max-width: 780px)' : {
-  width:'40vw'}
+  '@media (max-width: 780px)' : { width:'28vw', fontSize: '1.7rem' }
 }));
 export const NavTitleText = styled(Typography)(( ) => ({
   color: theme.palette.bright,
@@ -218,7 +217,9 @@ export const NavTitleText = styled(Typography)(( ) => ({
   fontWeight: '800', 
   fontSize: '1.4rem',
   lineHeight: 1,
-  '@media (max-width: 780px)' : {fontSize: '1.3rem'}
+  whiteSpace: 'normal',
+  wordWrap: 'break-word',
+  '@media (max-width: 780px)' : {fontSize: '1.1rem'}
 }));
 export const NavSocials=styled(ListSubheader)(( ) => ({
   my: 3,  
