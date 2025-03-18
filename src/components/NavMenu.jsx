@@ -20,7 +20,7 @@ export default function NavMenu() {
           <NavTitleText level="h4"> Fullstack Devops Engineer </NavTitleText>
         </ListItem>
         </List>
-        <NavSubtitle>
+        <NavSubtitle sx={{maxWidth:'16rem'}}>
             I enable dev teams to customize GitOps best practices for their needs
         </NavSubtitle>
         <List sx={{ '@media (max-width: 780px)' : {flexDirection: 'row', justifyContent:'start', m:0, p:0}}}>
