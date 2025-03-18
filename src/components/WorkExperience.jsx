@@ -21,16 +21,12 @@ export default function WorkExperience () {
                 <WorkPosition > 
                 <Link to={w.url} target="_blank" rel="noopener noreferrer">
                   {w.position}  <i>{w.name}</i>
-                  {w.url? <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'1rem'}}/>: <></>}
+                  {w.url? <TurnSlightRightOutlinedIcon  sx={{color: theme.palette.bright, fontSize:'1rem'}}/> : '' }
                 </Link> 
                 </WorkPosition >
               <WorkList sx={{ m:0 }}>
-              <WorkListItem>
-                {w.summary}
-              </WorkListItem>
-              <WorkListItem sx={{m:0 }}>
-                {makeButtons(w)}
-              </WorkListItem>
+                { w.summary? <WorkListItem>{w.summary}</WorkListItem> : '' }
+                { w.tools? <WorkListItem sx={{m:0}}>{makeButtons(w)}</WorkListItem> : '' }
               </WorkList>
             </WorkBodyCell>
           </WorkRow>
