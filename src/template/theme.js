@@ -13,6 +13,7 @@ export const shades = {
     700: " #000000",
     800: "#bdb8d2",
     900: '#DFB64E',
+    1000: "rgb(217, 40, 149)",
   },
 }
 
@@ -26,7 +27,9 @@ export const style = {
   },
   palette: {
       light: shades.primary[100],
-      bright: shades.primary[200],
+      light2: shades.primary[200],
+      bright: shades.primary[1000],
+      shiny: shades.primary[900],
       main: shades.primary[300],
       dark1: shades.primary[500],
       text: shades.primary[800],
@@ -79,6 +82,7 @@ export const global = {
             body: { 
               fontFamily: 'Hind, sans-serif',
               backgroundColor: theme.palette.background,
+              backgroundImage: 'radial-gradient(at 10% 15%, rgb(145, 152, 229, .2),rgb(230, 100, 101, .2))',
               color: theme.palette.text,
               margin: 0,
               padding: 0,
@@ -109,15 +113,15 @@ export const BootstrapButton = styled(Button)(( ) => ({
   padding: '3px 10px',
   border: '1px solid',
   borderRadius: '1rem',
-  backgroundColor: shades.primary[900],
-  borderColor: shades.primary[900],
+  backgroundColor: theme.palette.shiny,
+  borderColor: theme.palette.shiny,
   color: theme.palette.dark1,
   fontWeight: '800',
   fontFamily: 'Tourney Variable',
   lineHeight: 1,
   '&:hover': {
-    backgroundColor: theme.palette.bright,
-    borderColor: theme.palette.bright,
+    backgroundColor: theme.palette.light2,
+    borderColor: theme.palette.light2,
   },
   '&:active': {
     boxShadow: 'none',
