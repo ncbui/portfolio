@@ -241,6 +241,7 @@ export const WorkRow = styled(TableRow)(( ) => ({
     maxWidth: '90vw'
   }
 }));
+
 export const WorkDateCell = styled(TableCell)(( ) => ({ 
   verticalAlign: 'top', 
   alignItems: 'left',
@@ -263,7 +264,6 @@ export const WorkBodyCell = styled(TableCell)(( ) => ({
   borderBottom: 0, 
   '@media (max-width: 786px)': {} 
   }));
-
 export const WorkPosition = styled(Typography)(( ) => ({
   fontSize:'1rem',
   fontWeight: '800',
@@ -287,5 +287,13 @@ export const HeaderCell = styled(TableCell)(( ) => ({
   borderColor:theme.palette.bright,  
   fontWeight:'400',
   borderBottom: 0,
-
+}));
+export const ResumeContainer = styled(Container)(( ) => ({
+  color:theme.palette.dark1, 
+  border:'1px solid grey',
+  backgroundColor:'white',
+}))
+export const ResumeRow = styled(WorkRow)(( ) => ({ 
+  border: '1px solid blue',
+  height: 'fit-auto',
 }));
