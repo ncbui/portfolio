@@ -1,4 +1,4 @@
-import { createTheme, TableCell, TableRow } from '@mui/material';
+import { createTheme, Fab, TableCell, TableRow } from '@mui/material';
 import { Sheet, Button, Container, Typography, List, ListItem, ListSubheader } from '@mui/joy';
 import { styled } from "@mui/material/styles";
 
@@ -320,3 +320,24 @@ export const ResumeCell = styled(TableCell)(( ) => ({
   '@media (max-width: 780px)' : {
   }
   }));
+
+export const ResumeFab = styled(Fab)(( ) => ({
+  marginLeft: '1rem',
+  backgroundColor: theme.palette.shiny,
+  borderColor: theme.palette.shiny,
+  color: theme.palette.dark1,
+  fontWeight: '700',
+  fontFamily: 'Hind',
+  lineHeight: 1,
+  '&:hover': {
+    backgroundColor: theme.palette.light2,
+    borderColor: theme.palette.light2,
+  },
+  '&:active': {
+    boxShadow: 'none',
+  },
+  '&:disabled': {
+    borderColor: theme.palette.text,
+    color: theme.palette.text,
+  },
+}))
