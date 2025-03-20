@@ -292,8 +292,31 @@ export const ResumeContainer = styled(Container)(( ) => ({
   color:theme.palette.dark1, 
   border:'1px solid grey',
   backgroundColor:'white',
+  paddingBottom: '4rem',
 }))
-export const ResumeRow = styled(WorkRow)(( ) => ({ 
+export const ResumeRow = styled(TableRow)(( ) => ({ 
   border: '1px solid blue',
-  height: 'fit-auto',
+  // p:0, 
+  // m:0,   
+  // lineHeight: 1,
+  whiteSpace: 'normal',
+  wordWrap: 'break-word',
+  '@media (max-width: 780px)' : {
+    flexDirection: 'col',
+    maxWidth: '90vw'
+  }
 }));
+export const ResumeCell = styled(TableCell)(( ) => ({ 
+  verticalAlign: 'top', 
+  alignItems: 'left',
+  borderRight: '5px dotted', 
+  borderColor: theme.palette.bright, 
+  borderTop: 0,
+  borderBottom: 0,
+  fontSize:1, 
+  fontWeight: 'bold',
+  width:'',
+  color: theme.palette.dark1,
+  '@media (max-width: 780px)' : {
+  }
+  }));

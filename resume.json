@@ -19,7 +19,7 @@
       "username": "ncbui",
       "url": "https://github.com/ncbui"},
       {"network": "linkedin",
-      "username": "ncbui",
+      "username": "cambui",
       "url": "https://www.linkedin.com/in/cambui/"}
       ]},
     "work": [
@@ -61,7 +61,7 @@
         },
         {
         "position": "Graduate Researcher",
-        "name": "Action & Consciousness Lab, San Francisco State University",
+        "name": "Action & Consciousness Lab at SFSU",
         "url": "https://faculty.sfsu.edu/~morsella/content/action-and-consciousness-laboratory",
         "startDate": "2016",
         "endDate": "2019",
@@ -97,9 +97,9 @@
       "institution": "San Francisco State University",
       "url": "https://psychology.sfsu.edu/social-personality-and-affective-science-psychology-graduate-program",
       "area": "Social, Personality, and Affective Psychology",
-      "studyType": "graduate coursework towards MA",
+      "studyType": "Graduate coursework towards MA",
       "startDate": "2016",
-      "endDate": "2016-2019",
+      "endDate": "2019",
       "score": "",
       "courses": [""]
       },
@@ -108,7 +108,7 @@
       "url": "http://kin.sfsu.edu/undergraduate-programs#tab-content-tab-455-1",
       "area": "Kinesiology, concentration in Neuromuscular Science",
       "studyType": "BSc",
-      "startDate": "2013",
+      "startDate": "",
       "endDate": "2016",
       "score": "",
       "courses": [""]
