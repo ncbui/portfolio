@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
-import {Table, TableContainer, TableBody} from '@mui/material';
+import { Table, TableContainer, TableBody } from '@mui/material';
 import TurnSlightRightOutlinedIcon from '@mui/icons-material/TurnSlightRightOutlined';
-import { BootstrapButton, NavTitleText, WorkRow, WorkDateCell, WorkDate, WorkBodyCell, HeaderCell, WorkPosition, WorkList, WorkListItem } from '../template/theme';
+import { NavTitleText, WorkRow, WorkDateCell, WorkDate, WorkBodyCell, HeaderCell, WorkPosition, WorkList, WorkListItem } from '../template/theme';
 import { useTheme } from '@mui/styles';
 import * as resume from '../../resume.json'
-import { Typography } from '@mui/joy';
+import { makeButtons } from '../constants/common';
 
 export default function WorkExperience () { 
     const theme = useTheme()
@@ -31,14 +31,14 @@ export default function WorkExperience () {
           </WorkRow>
       )}))}
 
-    const makeButtons = ({tools}) =>{
-        return( 
-            <Typography>
-            {tools.map((tool)=>{
-              return (
-              <BootstrapButton key={tool+tool.indexOf()}>{tool}</BootstrapButton>)})}
-            </Typography> 
-        )}
+    // const makeButtons = ({tools}) =>{
+    //     return( 
+    //         <Typography>
+    //         {tools.map((tool)=>{
+    //           return (
+    //           <BootstrapButton key={tool+tool.indexOf()}>{tool}</BootstrapButton>)})}
+    //         </Typography> 
+    //     )}
 
     const makeEduRow = (exp) =>{
       return( exp.map((a)=>{

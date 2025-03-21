@@ -1,12 +1,11 @@
-import { HeaderCell, NavName, NavSubtitle, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , WorkDate, WorkSheets } from './theme';
-import { BootstrapButton } from './theme';
+import { Link } from 'react-router-dom';
 import * as resume from '../../resume.json'
 import generatePDF from 'react-to-pdf';
 import { useTheme } from '@mui/styles';
-import { Box, List, Table,  Typography } from '@mui/joy';
-import { Link } from 'react-router-dom';
-import { TableBody, TableCell, Paper, TableRow, TableHead, ListItem, Fab } from '@mui/material';
-import TurnSlightRightOutlinedIcon from '@mui/icons-material/TurnSlightRightOutlined';
+import { Box, Table,  Typography } from '@mui/joy';
+import { TableBody, TableCell, Paper, TableRow, TableHead } from '@mui/material';
+import { HeaderCell, NavName, NavSubtitle, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  WorkSheets } from './theme';
+import { createCertData, createEduData, createWorkData } from '../constants/common';
 
 const options = {
     filename: 'resume.pdf',
@@ -17,37 +16,6 @@ const options = {
 
 const getTargetElement = () => document.getElementById('container');
 const downloadPdf = () => generatePDF(getTargetElement, options);
-
-
-const createCertData=(cert)=>{
-  const dates = `${cert.date}`;
-  const main = <Typography>{cert.name}. <i>{cert.issuer}</i></Typography>;
-  return { dates, main };
-}
-const createEduData=(edu)=>{
-  const dates = edu.startDate=="" ?<Typography>{edu.endDate}</Typography>:<Typography>{edu.startDate} - {edu.endDate}</Typography>
-  const main = <Typography>{edu.studyType}  {edu.area}<br/> <i>{edu.institution}</i></Typography>;
-  return { dates, main };
-}
-const createWorkData=(work)=>{
-  const dates = `${work.startDate} - ${work.endDate}`;
-  const main = createMain(work);
-  return { dates, main };
-}
-
-const createMain=(work)=>{
-  return (
-    <Box>
-      <Typography>
-        {work.position}  <i>{work.name}</i>
-      </Typography>
-        <List>
-          { work.highlights.map((h,i)=>{
-            return(<ListItem key={`work-${i}`}> <Typography level='body-sm' lineHeight={1}>{h}</Typography></ListItem>)
-          }) }
-        </List>
-    </Box>)
-}
 
 
 export default function Resume() {
@@ -61,7 +29,7 @@ export default function Resume() {
           const { dates, main } = createCertData(c)
           return(
           <TableRow colSpan={5} key={`cert-${dates}`} sx={{verticalAlign:'top'}} >
-            <TableCell colSpan={1} scope="row" align="right"> <Typography sx={{padding: '0 1rem'}}> {dates} </Typography> </TableCell>
+            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold'}}> {dates} </ResumeType> </TableCell>
             <TableCell colSpan={4}> {main} </TableCell>
           </TableRow>)
         }))
@@ -71,7 +39,7 @@ export default function Resume() {
           const { dates, main } = createEduData(e)
           return(
           <TableRow colSpan={5} key={`edu-${i}`} sx={{verticalAlign:'top'}} >
-            <TableCell colSpan={1} align="right" padding="" scope="row" > <Typography sx={{padding: '0 1rem'}}> {dates} </Typography>  </TableCell>
+            <TableCell colSpan={1} align="right" padding="" scope="row" > <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold'}}> {dates} </ResumeType>  </TableCell>
             <TableCell colSpan={4}> {main} </TableCell>
           </TableRow>)
         }))
@@ -81,7 +49,7 @@ export default function Resume() {
           const { dates, main } = createWorkData(w)
           return(
           <TableRow colSpan={5} key={dates} sx={{verticalAlign:'top'}} >
-            <TableCell colSpan={1} scope="row" align="right"> <Typography sx={{padding: '0 1rem'}}> {dates} </Typography>  </TableCell>
+            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold'}}> {dates} </ResumeType>  </TableCell>
             <TableCell colSpan={4}> {main} </TableCell>  
           </TableRow>)
         }))
@@ -101,7 +69,7 @@ export default function Resume() {
         return (
         <TableRow >
             <TableCell colSpan={3}>
-              <Box sx={{ width: '25rem', marginTop:'4rem', marginBottom:'2rem' }}>
+              <Box sx={{ width: '25rem', marginTop:'4rem', marginBottom:'1.5rem' }}>
               <NavTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem',  }}>
                 <NavName sx={{color:theme.palette.dark1, display:'block', lineHeight:1, fontSize:'2.5rem'}}> 
                   Cam Bui 
