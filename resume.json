@@ -66,7 +66,7 @@
         "startDate": "2016",
         "endDate": "2019",
         "summary": "Proposed, conducted, and analyzed behavioral experiments on automatic visual and syntactic processing.",
-        "tools": ["R"],
+        "tools": ["R", "statistical analysis"],
         "highlights": [
           "Conducted, and analyzed behavioral experiments on automatic visual and syntactic processing. https://doi.org/10.1037/cns0000208."]
         },

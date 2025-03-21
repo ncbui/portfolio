@@ -110,7 +110,7 @@ export const BootstrapButton = styled(Button)(( ) => ({
   fontSize: '80%',
   marginRight: '.2rem',
   marginBottom: '.3rem',
-  padding: '3px 10px',
+  padding: '1px 10px',
   border: '1px solid',
   borderRadius: '1rem',
   backgroundColor: theme.palette.shiny,
@@ -341,3 +341,23 @@ export const ResumeFab = styled(Fab)(( ) => ({
     color: theme.palette.text,
   },
 }))
+
+export const ResumeType = styled(Typography)(( ) => ({
+  fontFamily: 'Hind, sans-serif',
+  color: theme.palette.dark1,
+}))
+
+export const ResumeButton = styled(Typography)(( ) => ({
+  fontFamily: 'Hind, sans-serif',
+  fontWeight: 'bold',
+  textTransform: 'none',
+  fontSize: '80%',
+  marginRight: '.2rem',
+  marginBottom: '.5rem',
+  padding: '1px 5px',
+  border: '1px solid',
+  borderRadius: '.3rem',
+  '&:disabled': {
+    borderColor: theme.palette.text,
+    color: theme.palette.text,
+}}))
