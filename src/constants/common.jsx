@@ -13,12 +13,12 @@ export const makeButtons = ({tools}) =>{
 
 export const createCertData=(cert)=>{
   const dates = `${cert.date}`;
-  const main = <ResumeType sx={{fontWeight: 'bold', paddingBottom:'.5rem'}}>{cert.name}. <i>{cert.issuer}</i></ResumeType>;
+  const main = <ResumeType sx={{fontWeight: 'bold', paddingBottom:'.2rem', paddingTop: '.2rem',}}>{cert.name}. <i>{cert.issuer}</i></ResumeType>;
   return { dates, main };
 }
 export const createEduData=(edu)=>{
   const dates = edu.startDate=="" ?<ResumeType>{edu.endDate}</ResumeType>:<ResumeType>{edu.startDate} - {edu.endDate}</ResumeType>
-  const main = <ResumeType sx={{fontWeight: 'bold', paddingBottom:'.5rem'}}>{edu.studyType}  {edu.area}<br/> <i>{edu.institution}</i></ResumeType>;
+  const main = <ResumeType sx={{fontWeight: 'bold', paddingBottom:'.2rem', paddingTop: '.2rem'}}>{edu.studyType}  {edu.area}<br/> <i>{edu.institution}</i></ResumeType>;
   return { dates, main };
 }
 export const createWorkData=(work)=>{
@@ -30,7 +30,7 @@ export const createWorkData=(work)=>{
 export const createMain=(work)=>{
   return (
     <Box>
-      <ResumeType sx={{fontWeight: 'bold'}}>
+      <ResumeType sx={{fontWeight: 'bold', paddingTop: '.2rem',}}>
         {work.position}  <i>{work.name}</i>
       </ResumeType>
         <List>

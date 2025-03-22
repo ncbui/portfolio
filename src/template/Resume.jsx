@@ -29,7 +29,7 @@ export default function Resume() {
           const { dates, main } = createCertData(c)
           return(
           <TableRow colSpan={5} key={`cert-${dates}`} sx={{verticalAlign:'top'}} >
-            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold'}}> {dates} </ResumeType> </TableCell>
+            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold', paddingTop: '.2rem',}}> {dates} </ResumeType> </TableCell>
             <TableCell colSpan={4}> {main} </TableCell>
           </TableRow>)
         }))
@@ -39,7 +39,7 @@ export default function Resume() {
           const { dates, main } = createEduData(e)
           return(
           <TableRow colSpan={5} key={`edu-${i}`} sx={{verticalAlign:'top'}} >
-            <TableCell colSpan={1} align="right" padding="" scope="row" > <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold'}}> {dates} </ResumeType>  </TableCell>
+            <TableCell colSpan={1} align="right" padding="" scope="row" > <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold', paddingTop: '.2rem',}}> {dates} </ResumeType>  </TableCell>
             <TableCell colSpan={4}> {main} </TableCell>
           </TableRow>)
         }))
@@ -49,7 +49,7 @@ export default function Resume() {
           const { dates, main } = createWorkData(w)
           return(
           <TableRow colSpan={5} key={dates} sx={{verticalAlign:'top'}} >
-            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold'}}> {dates} </ResumeType>  </TableCell>
+            <TableCell colSpan={1} scope="row" align="right"> <ResumeType sx={{padding: '0 1rem', fontWeight: 'bold', paddingTop: '.2rem',}}> {dates} </ResumeType>  </TableCell>
             <TableCell colSpan={4}> {main} </TableCell>  
           </TableRow>)
         }))
@@ -60,7 +60,7 @@ export default function Resume() {
         return (
           <ResumeRow sx={{border: 0}}>
             <HeaderCell colSpan={5} sx={{margin:0, padding:0, border: 0,}}>
-              <NavTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem', paddingTop: '.75rem', paddingBottom: '.5rem'  }}> {header} </NavTitleText>
+              <NavTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem', paddingTop: '.2rem', paddingBottom: '.2rem'  }}> {header} </NavTitleText>
             </HeaderCell>
         </ResumeRow>
         )
@@ -69,7 +69,7 @@ export default function Resume() {
         return (
         <TableRow >
             <TableCell colSpan={3}>
-              <Box sx={{ width: '25rem', marginTop:'4rem', marginBottom:'1.5rem' }}>
+              <Box sx={{ width: '25rem', marginTop:'2rem', marginBottom:'1.5rem' }}>
               <NavTitleText sx={{ color: theme.palette.dark1, fontSize:'1.2rem',  }}>
                 <NavName sx={{color:theme.palette.dark1, display:'block', lineHeight:1, fontSize:'2.5rem'}}> 
                   Cam Bui 
@@ -95,8 +95,8 @@ export default function Resume() {
       }
 
   return (
-    <WorkSheets component={Paper} sx={{ padding:'1.5rem', height:'100vh' }} >
-      <ResumeFab variant="extended" onClick={downloadPdf} sx={{bottom:0}}>Download</ResumeFab>
+    <WorkSheets component={Paper} sx={{ padding:'1rem', height:'100vh', }} >
+      <ResumeFab variant="extended" onClick={downloadPdf}>Download</ResumeFab>
        <ResumeContainer id='container' component={Paper}>
         <Table sx={{ minWidth: 650 }} size="medium" aria-label="a dense table">
           <TableHead>

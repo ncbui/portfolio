@@ -110,7 +110,7 @@ export const BootstrapButton = styled(Button)(( ) => ({
   fontSize: '80%',
   marginRight: '.2rem',
   marginBottom: '.3rem',
-  padding: '1px 10px',
+  // padding: '1px 10px',
   border: '1px solid',
   borderRadius: '1rem',
   backgroundColor: theme.palette.shiny,
@@ -118,7 +118,7 @@ export const BootstrapButton = styled(Button)(( ) => ({
   color: theme.palette.dark1,
   fontWeight: '700',
   fontFamily: 'Hind',
-  lineHeight: 1,
+  // lineHeight: 1,
   '&:hover': {
     backgroundColor: theme.palette.light2,
     borderColor: theme.palette.light2,
@@ -290,9 +290,9 @@ export const HeaderCell = styled(TableCell)(( ) => ({
 }));
 export const ResumeContainer = styled(Container)(( ) => ({
   color:theme.palette.dark1, 
-  border:'1px solid grey',
+  // border:'1px solid grey',
   backgroundColor:'white',
-  paddingBottom: '4rem',
+  // paddingBottom: '4rem',
 }))
 export const ResumeRow = styled(TableRow)(( ) => ({ 
   border: '1px solid blue',
