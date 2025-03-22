@@ -1,7 +1,7 @@
 import { Typography } from '@mui/joy';
 import { BodySheets } from '../template/theme';
 
-export default function Home() {
+export default function About() {
   return (
     <BodySheets>
       <Typography sx={{color:'inherit'}}>Experienced software engineer with expertise in GitOps and cloud native software development. Passionate about understand developer friction to make room for communication and collaboration.  </Typography>
