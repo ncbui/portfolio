@@ -40,14 +40,11 @@
         "startDate": "2021",
         "endDate": "2024",
         "summary": "Build and maintain data pipelines and platforms, across frontend, backend, and cloud infrastructure. Worked closely with cross-functional teams to enable scientists, healthcare providers, operations specialists, and more to build tools to understand their data.",
-        "tools": ["Kubernetes", "ArgoCD", "PySpark", "React", "Python", "PostgreSQL", "Azure"],
+        "tools": ["Python", "ReactJS", "Kubernetes", "ArgoCD", "PySpark",  "PostgreSQL", "Snyk", "Aqua"],
         "highlights": [
-            "Collaborated with product, UX, developer, and stakeholder teams to design, deploy, and maintain distributed data pipelines with Javascript, React, Python, PostgreSQL, AWS, Azure stacks to add new capabilities to existing platforms. ",
-            "automating security and compliance checks with automated testing as part of the CI/CD pipelines, ",
-            "configuring and maintaining Argo CD to enable GitOps-managed test resources", 
-            "and standardizing exception handling and error monitoring practices",
-            "Advocated for devops and platform engineering best practices to enable developers to self-ship safe code faster by automating security and compliance check as part of the CI/CD pipelines, configuring and maintaining Argo CD to enable GitOps-managed test resources, and standardizing exception handling and error monitoring practices.",
-            "Presented relatable software & engineering concepts at lunch'n'learn series to teams of various expertises."
+            "Developed automation code to configure and build robust CI/CD pipelines into test and production environments",
+            "Optimize developer starter kits to reduce time to first feature deployment for emergent teams and features",
+            "Increase deployment frequency and reduced time to deployment by standardizing exception handling and error monitoring, strategically implementing security and compliance checks, and enabling developers to deploy test resources into distributed environments using ArgoCD."
         ]},
         {
         "position": "Data Entry ",
