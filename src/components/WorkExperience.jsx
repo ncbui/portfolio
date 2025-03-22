@@ -4,7 +4,7 @@ import TurnSlightRightOutlinedIcon from '@mui/icons-material/TurnSlightRightOutl
 import { NavTitleText, WorkRow, WorkDateCell, WorkDate, WorkBodyCell, HeaderCell, WorkPosition, WorkList, WorkListItem } from '../template/theme';
 import { useTheme } from '@mui/styles';
 import * as resume from '../../resume.json'
-import { makeButtons } from '../constants/common';
+import { makeButtons } from '../template/common';
 
 export default function WorkExperience () { 
     const theme = useTheme()
@@ -30,15 +30,6 @@ export default function WorkExperience () {
             </WorkBodyCell>
           </WorkRow>
       )}))}
-
-    // const makeButtons = ({tools}) =>{
-    //     return( 
-    //         <Typography>
-    //         {tools.map((tool)=>{
-    //           return (
-    //           <BootstrapButton key={tool+tool.indexOf()}>{tool}</BootstrapButton>)})}
-    //         </Typography> 
-    //     )}
 
     const makeEduRow = (exp) =>{
       return( exp.map((a)=>{

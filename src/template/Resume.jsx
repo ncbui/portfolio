@@ -5,7 +5,7 @@ import { useTheme } from '@mui/styles';
 import { Box, Table,  Typography } from '@mui/joy';
 import { TableBody, TableCell, Paper, TableRow, TableHead } from '@mui/material';
 import { HeaderCell, NavName, NavSubtitle, NavTitleText, ResumeContainer, ResumeFab, ResumeRow , ResumeType,  WorkSheets } from './theme';
-import { createCertData, createEduData, createWorkData } from '../constants/common';
+import { createCertData, createEduData, createWorkData } from '../template/common';
 
 const options = {
     filename: 'resume.pdf',
