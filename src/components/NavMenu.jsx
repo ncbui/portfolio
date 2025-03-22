@@ -35,7 +35,7 @@ export default function NavMenu() {
           </ListItem>
           <ListItem >
             <Typography level='body-lg' >
-              <Link to="/resume" hidden>  resume  </Link>
+              <Link to="/resume">  resume  </Link>
             </Typography>
           </ListItem>
           </List>
